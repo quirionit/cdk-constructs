@@ -8,7 +8,7 @@ const cdkVersion = '2.9.0';
 const project = new awscdk.AwsCdkConstructLibrary({
   name: '@quirion/cdk-constructs',
   description: 'CDK - constructs',
-  repository: 'https://github.com/Tobiklee/cdk-constructs.git',
+  repository: 'https://github.com/quirionit/cdk-constructs.git',
 
   licensed: true,
   license: 'MIT',
