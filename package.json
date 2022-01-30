@@ -1,5 +1,5 @@
 {
-  "name": "cdk-constructs",
+  "name": "@quirion/cdk-constructs",
   "description": "CDK - constructs",
   "repository": {
     "type": "git",
