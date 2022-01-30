@@ -1,9 +1,21 @@
-import { AttributeType, Table, TableProps } from 'aws-cdk-lib/aws-dynamodb';
+import { AttributeType, Table } from 'aws-cdk-lib/aws-dynamodb';
 import { Construct } from 'constructs';
 import { getEnvironment } from '../utils';
 import { Configuration } from './single-table-datastore-configuration';
 
-export type SingleTableDatastoreProps = Omit<TableProps, 'partitionKey'>;
+export interface SingleTableDatastoreProps {
+  /**
+   * Mandatory table name
+   */
+  readonly tableName: string;
+
+  /**
+   * TODO figure out how to use TableProps but every attribute is optional.
+   * Optional extend deployment with more table props. Notice the injected config will override some.
+   * @see Configuration
+   */
+  readonly options?: any;
+}
 
 /**
  * Extends dynamodb - table and streamline creating dynamodb - tables following single - table - design.
@@ -12,11 +24,12 @@ export type SingleTableDatastoreProps = Omit<TableProps, 'partitionKey'>;
  */
 export class SingleTableDatastore extends Table {
 
-  constructor(scope: Construct, id: string, props: SingleTableDatastoreProps) {
+  constructor(scope: Construct, id: string, props?: SingleTableDatastoreProps) {
 
     // inject default props before calling super
     const superProps = {
-      ...props,
+      ...props?.options,
+      tableName: props?.tableName,
       ...Configuration[getEnvironment(scope)],
     };
 

@@ -1,7 +1,7 @@
 import { App, Stack } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
 import { AttributeType } from 'aws-cdk-lib/aws-dynamodb';
-import { SingleTableDatastore } from '../../lib/dynamodb/single-table-datastore';
+import { SingleTableDatastore } from '../../src';
 
 describe('SingleTableDatastore', () => {
   const properties = {
@@ -56,6 +56,7 @@ describe('SingleTableDatastore', () => {
 
     // create test stack
     const testStack = new Stack(app, 'TestStack');
+    testStack.node.setContext('env', 'dev');
 
     // Create the topic the stack we're testing will reference.
     new SingleTableDatastore(testStack, 'SingleTableDatastore', {
@@ -101,6 +102,7 @@ describe('SingleTableDatastore', () => {
 
     // create test stack
     const testStack = new Stack(app, 'TestStack');
+    testStack.node.setContext('env', 'dev');
 
     // Create the topic the stack we're testing will reference.
     const table = new SingleTableDatastore(testStack, 'SingleTableDatastore', {
