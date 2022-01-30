@@ -25,7 +25,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     'quirion',
   ],
 
-  packageManager: NodePackageManager.PNPM,
+  packageManager: NodePackageManager.NPM,
 
   cdkVersion,
   cdkVersionPinning: false,
