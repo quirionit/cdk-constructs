@@ -11,7 +11,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   repository: 'https://github.com/quirionit/cdk-constructs.git',
 
   licensed: true,
-  license: 'MIT',
+  license: 'Apache-2.0',
 
   authorName: 'Tobias Kleemann',
   authorUrl: 'https://www.quirion.de',
