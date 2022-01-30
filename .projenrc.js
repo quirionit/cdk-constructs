@@ -6,7 +6,7 @@ const {
 const cdkVersion = '2.9.0';
 
 const project = new awscdk.AwsCdkConstructLibrary({
-  name: 'cdk-constructs',
+  name: '@quirion/cdk-constructs',
   description: 'CDK - constructs',
   repository: 'https://github.com/Tobiklee/cdk-constructs.git',
 
@@ -35,9 +35,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
   release: {
     releaseEveryCommit: true,
   },
-
-  autoApproveUpgrades: true,
-  autoApproveOptions: { allowedUsernames: ['Tobiklee'], secret: 'GITHUB_TOKEN' },
 
   gitignore: [
     '.idea',
