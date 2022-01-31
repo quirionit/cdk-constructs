@@ -59,6 +59,107 @@ public readonly distribution: Distribution;
 ---
 
 
+### GoLambda <a name="GoLambda" id="@quirion/cdk-constructs.GoLambda"></a>
+
+#### Initializers <a name="Initializers" id="@quirion/cdk-constructs.GoLambda.Initializer"></a>
+
+```typescript
+import { GoLambda } from '@quirion/cdk-constructs'
+
+new GoLambda(scope: Construct, id: string, props: BaseLambdaConfiguration)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@quirion/cdk-constructs.GoLambda.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.GoLambda.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.GoLambda.Initializer.parameter.props">props</a></code> | <code><a href="#@quirion/cdk-constructs.BaseLambdaConfiguration">BaseLambdaConfiguration</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="@quirion/cdk-constructs.GoLambda.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="@quirion/cdk-constructs.GoLambda.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="@quirion/cdk-constructs.GoLambda.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#@quirion/cdk-constructs.BaseLambdaConfiguration">BaseLambdaConfiguration</a>
+
+---
+
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@quirion/cdk-constructs.GoLambda.property.arnWithAlias">arnWithAlias</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.GoLambda.property.provisionedConcurrency">provisionedConcurrency</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.GoLambda.property.provisionedConcurrencyConfig">provisionedConcurrencyConfig</a></code> | <code><a href="#@quirion/cdk-constructs.ProvisionedConcurrencyConfiguration">ProvisionedConcurrencyConfiguration</a></code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.GoLambda.property.shouldStoreArn">shouldStoreArn</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.GoLambda.property.policies">policies</a></code> | <code>aws-cdk-lib.aws_iam.PolicyStatementProps[]</code> | *No description.* |
+
+---
+
+##### `arnWithAlias`<sup>Required</sup> <a name="arnWithAlias" id="@quirion/cdk-constructs.GoLambda.property.arnWithAlias"></a>
+
+```typescript
+public readonly arnWithAlias: string;
+```
+
+- *Type:* string
+
+---
+
+##### `provisionedConcurrency`<sup>Required</sup> <a name="provisionedConcurrency" id="@quirion/cdk-constructs.GoLambda.property.provisionedConcurrency"></a>
+
+```typescript
+public readonly provisionedConcurrency: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `provisionedConcurrencyConfig`<sup>Required</sup> <a name="provisionedConcurrencyConfig" id="@quirion/cdk-constructs.GoLambda.property.provisionedConcurrencyConfig"></a>
+
+```typescript
+public readonly provisionedConcurrencyConfig: ProvisionedConcurrencyConfiguration;
+```
+
+- *Type:* <a href="#@quirion/cdk-constructs.ProvisionedConcurrencyConfiguration">ProvisionedConcurrencyConfiguration</a>
+
+---
+
+##### `shouldStoreArn`<sup>Required</sup> <a name="shouldStoreArn" id="@quirion/cdk-constructs.GoLambda.property.shouldStoreArn"></a>
+
+```typescript
+public readonly shouldStoreArn: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `policies`<sup>Optional</sup> <a name="policies" id="@quirion/cdk-constructs.GoLambda.property.policies"></a>
+
+```typescript
+public readonly policies: PolicyStatementProps[];
+```
+
+- *Type:* aws-cdk-lib.aws_iam.PolicyStatementProps[]
+
+---
+
+
 ### MicroFrontend <a name="MicroFrontend" id="@quirion/cdk-constructs.MicroFrontend"></a>
 
 MicroFrontendStack deploys static files to a public s3 bucket.
@@ -99,6 +200,107 @@ new MicroFrontend(scope: Construct, id: string, props: MicroFrontendConfiguratio
 
 
 
+
+
+### NodeJsLambda <a name="NodeJsLambda" id="@quirion/cdk-constructs.NodeJsLambda"></a>
+
+#### Initializers <a name="Initializers" id="@quirion/cdk-constructs.NodeJsLambda.Initializer"></a>
+
+```typescript
+import { NodeJsLambda } from '@quirion/cdk-constructs'
+
+new NodeJsLambda(scope: Construct, id: string, props: BaseLambdaConfiguration)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@quirion/cdk-constructs.NodeJsLambda.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.NodeJsLambda.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.NodeJsLambda.Initializer.parameter.props">props</a></code> | <code><a href="#@quirion/cdk-constructs.BaseLambdaConfiguration">BaseLambdaConfiguration</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="@quirion/cdk-constructs.NodeJsLambda.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="@quirion/cdk-constructs.NodeJsLambda.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="@quirion/cdk-constructs.NodeJsLambda.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#@quirion/cdk-constructs.BaseLambdaConfiguration">BaseLambdaConfiguration</a>
+
+---
+
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@quirion/cdk-constructs.NodeJsLambda.property.arnWithAlias">arnWithAlias</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.NodeJsLambda.property.provisionedConcurrency">provisionedConcurrency</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.NodeJsLambda.property.provisionedConcurrencyConfig">provisionedConcurrencyConfig</a></code> | <code><a href="#@quirion/cdk-constructs.ProvisionedConcurrencyConfiguration">ProvisionedConcurrencyConfiguration</a></code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.NodeJsLambda.property.shouldStoreArn">shouldStoreArn</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.NodeJsLambda.property.policies">policies</a></code> | <code>aws-cdk-lib.aws_iam.PolicyStatementProps[]</code> | *No description.* |
+
+---
+
+##### `arnWithAlias`<sup>Required</sup> <a name="arnWithAlias" id="@quirion/cdk-constructs.NodeJsLambda.property.arnWithAlias"></a>
+
+```typescript
+public readonly arnWithAlias: string;
+```
+
+- *Type:* string
+
+---
+
+##### `provisionedConcurrency`<sup>Required</sup> <a name="provisionedConcurrency" id="@quirion/cdk-constructs.NodeJsLambda.property.provisionedConcurrency"></a>
+
+```typescript
+public readonly provisionedConcurrency: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `provisionedConcurrencyConfig`<sup>Required</sup> <a name="provisionedConcurrencyConfig" id="@quirion/cdk-constructs.NodeJsLambda.property.provisionedConcurrencyConfig"></a>
+
+```typescript
+public readonly provisionedConcurrencyConfig: ProvisionedConcurrencyConfiguration;
+```
+
+- *Type:* <a href="#@quirion/cdk-constructs.ProvisionedConcurrencyConfiguration">ProvisionedConcurrencyConfiguration</a>
+
+---
+
+##### `shouldStoreArn`<sup>Required</sup> <a name="shouldStoreArn" id="@quirion/cdk-constructs.NodeJsLambda.property.shouldStoreArn"></a>
+
+```typescript
+public readonly shouldStoreArn: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `policies`<sup>Optional</sup> <a name="policies" id="@quirion/cdk-constructs.NodeJsLambda.property.policies"></a>
+
+```typescript
+public readonly policies: PolicyStatementProps[];
+```
+
+- *Type:* aws-cdk-lib.aws_iam.PolicyStatementProps[]
+
+---
 
 
 ### SingleTableDatastore <a name="SingleTableDatastore" id="@quirion/cdk-constructs.SingleTableDatastore"></a>
@@ -246,6 +448,90 @@ public readonly deploymentConfiguration: DeploymentConfiguration;
 - *Type:* <a href="#@quirion/cdk-constructs.DeploymentConfiguration">DeploymentConfiguration</a>
 
 Further deployment properties.
+
+---
+
+### BaseLambdaConfiguration <a name="BaseLambdaConfiguration" id="@quirion/cdk-constructs.BaseLambdaConfiguration"></a>
+
+#### Initializer <a name="Initializer" id="@quirion/cdk-constructs.BaseLambdaConfiguration.Initializer"></a>
+
+```typescript
+import { BaseLambdaConfiguration } from '@quirion/cdk-constructs'
+
+const baseLambdaConfiguration: BaseLambdaConfiguration = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@quirion/cdk-constructs.BaseLambdaConfiguration.property.functionProps">functionProps</a></code> | <code>aws-cdk-lib.aws_lambda.FunctionOptions</code> | Should hand in regular function props. |
+| <code><a href="#@quirion/cdk-constructs.BaseLambdaConfiguration.property.policies">policies</a></code> | <code>aws-cdk-lib.aws_iam.PolicyStatementProps[]</code> | List of policy - statements which will be attached to lambda. |
+| <code><a href="#@quirion/cdk-constructs.BaseLambdaConfiguration.property.provisionedConcurrency">provisionedConcurrency</a></code> | <code>boolean</code> | Activate concurrent provisioning (default: false). |
+| <code><a href="#@quirion/cdk-constructs.BaseLambdaConfiguration.property.provisionedConcurrencyConfig">provisionedConcurrencyConfig</a></code> | <code><a href="#@quirion/cdk-constructs.ProvisionedConcurrencyConfiguration">ProvisionedConcurrencyConfiguration</a></code> | Override default configuration for provisioned concurrency default:. |
+| <code><a href="#@quirion/cdk-constructs.BaseLambdaConfiguration.property.shouldStoreArn">shouldStoreArn</a></code> | <code>boolean</code> | Should save lambda arn as ssm - parameter (default: false). |
+
+---
+
+##### `functionProps`<sup>Required</sup> <a name="functionProps" id="@quirion/cdk-constructs.BaseLambdaConfiguration.property.functionProps"></a>
+
+```typescript
+public readonly functionProps: FunctionOptions;
+```
+
+- *Type:* aws-cdk-lib.aws_lambda.FunctionOptions
+
+Should hand in regular function props.
+
+---
+
+##### `policies`<sup>Optional</sup> <a name="policies" id="@quirion/cdk-constructs.BaseLambdaConfiguration.property.policies"></a>
+
+```typescript
+public readonly policies: PolicyStatementProps[];
+```
+
+- *Type:* aws-cdk-lib.aws_iam.PolicyStatementProps[]
+
+List of policy - statements which will be attached to lambda.
+
+---
+
+##### `provisionedConcurrency`<sup>Optional</sup> <a name="provisionedConcurrency" id="@quirion/cdk-constructs.BaseLambdaConfiguration.property.provisionedConcurrency"></a>
+
+```typescript
+public readonly provisionedConcurrency: boolean;
+```
+
+- *Type:* boolean
+
+Activate concurrent provisioning (default: false).
+
+---
+
+##### `provisionedConcurrencyConfig`<sup>Optional</sup> <a name="provisionedConcurrencyConfig" id="@quirion/cdk-constructs.BaseLambdaConfiguration.property.provisionedConcurrencyConfig"></a>
+
+```typescript
+public readonly provisionedConcurrencyConfig: ProvisionedConcurrencyConfiguration;
+```
+
+- *Type:* <a href="#@quirion/cdk-constructs.ProvisionedConcurrencyConfiguration">ProvisionedConcurrencyConfiguration</a>
+
+Override default configuration for provisioned concurrency default:.
+
+> [DefaultConfiguration](DefaultConfiguration)
+
+---
+
+##### `shouldStoreArn`<sup>Optional</sup> <a name="shouldStoreArn" id="@quirion/cdk-constructs.BaseLambdaConfiguration.property.shouldStoreArn"></a>
+
+```typescript
+public readonly shouldStoreArn: boolean;
+```
+
+- *Type:* boolean
+
+Should save lambda arn as ssm - parameter (default: false).
 
 ---
 
@@ -402,6 +688,121 @@ Deployment configuration.
 
 ---
 
+### ProvisionedConcurrencyConfiguration <a name="ProvisionedConcurrencyConfiguration" id="@quirion/cdk-constructs.ProvisionedConcurrencyConfiguration"></a>
+
+Configuration for provisioned concurrency.
+
+#### Initializer <a name="Initializer" id="@quirion/cdk-constructs.ProvisionedConcurrencyConfiguration.Initializer"></a>
+
+```typescript
+import { ProvisionedConcurrencyConfiguration } from '@quirion/cdk-constructs'
+
+const provisionedConcurrencyConfiguration: ProvisionedConcurrencyConfiguration = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@quirion/cdk-constructs.ProvisionedConcurrencyConfiguration.property.from">from</a></code> | <code><a href="#@quirion/cdk-constructs.ProvisionedConcurrencyConfigurationTime">ProvisionedConcurrencyConfigurationTime</a></code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.ProvisionedConcurrencyConfiguration.property.maxCapacity">maxCapacity</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.ProvisionedConcurrencyConfiguration.property.minCapacity">minCapacity</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.ProvisionedConcurrencyConfiguration.property.to">to</a></code> | <code><a href="#@quirion/cdk-constructs.ProvisionedConcurrencyConfigurationTime">ProvisionedConcurrencyConfigurationTime</a></code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.ProvisionedConcurrencyConfiguration.property.utilizationTarget">utilizationTarget</a></code> | <code>number</code> | *No description.* |
+
+---
+
+##### `from`<sup>Required</sup> <a name="from" id="@quirion/cdk-constructs.ProvisionedConcurrencyConfiguration.property.from"></a>
+
+```typescript
+public readonly from: ProvisionedConcurrencyConfigurationTime;
+```
+
+- *Type:* <a href="#@quirion/cdk-constructs.ProvisionedConcurrencyConfigurationTime">ProvisionedConcurrencyConfigurationTime</a>
+
+---
+
+##### `maxCapacity`<sup>Required</sup> <a name="maxCapacity" id="@quirion/cdk-constructs.ProvisionedConcurrencyConfiguration.property.maxCapacity"></a>
+
+```typescript
+public readonly maxCapacity: number;
+```
+
+- *Type:* number
+
+---
+
+##### `minCapacity`<sup>Required</sup> <a name="minCapacity" id="@quirion/cdk-constructs.ProvisionedConcurrencyConfiguration.property.minCapacity"></a>
+
+```typescript
+public readonly minCapacity: number;
+```
+
+- *Type:* number
+
+---
+
+##### `to`<sup>Required</sup> <a name="to" id="@quirion/cdk-constructs.ProvisionedConcurrencyConfiguration.property.to"></a>
+
+```typescript
+public readonly to: ProvisionedConcurrencyConfigurationTime;
+```
+
+- *Type:* <a href="#@quirion/cdk-constructs.ProvisionedConcurrencyConfigurationTime">ProvisionedConcurrencyConfigurationTime</a>
+
+---
+
+##### `utilizationTarget`<sup>Required</sup> <a name="utilizationTarget" id="@quirion/cdk-constructs.ProvisionedConcurrencyConfiguration.property.utilizationTarget"></a>
+
+```typescript
+public readonly utilizationTarget: number;
+```
+
+- *Type:* number
+
+---
+
+### ProvisionedConcurrencyConfigurationTime <a name="ProvisionedConcurrencyConfigurationTime" id="@quirion/cdk-constructs.ProvisionedConcurrencyConfigurationTime"></a>
+
+Time for provisioned concurrency (from - to).
+
+#### Initializer <a name="Initializer" id="@quirion/cdk-constructs.ProvisionedConcurrencyConfigurationTime.Initializer"></a>
+
+```typescript
+import { ProvisionedConcurrencyConfigurationTime } from '@quirion/cdk-constructs'
+
+const provisionedConcurrencyConfigurationTime: ProvisionedConcurrencyConfigurationTime = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@quirion/cdk-constructs.ProvisionedConcurrencyConfigurationTime.property.hour">hour</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.ProvisionedConcurrencyConfigurationTime.property.minute">minute</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `hour`<sup>Required</sup> <a name="hour" id="@quirion/cdk-constructs.ProvisionedConcurrencyConfigurationTime.property.hour"></a>
+
+```typescript
+public readonly hour: string;
+```
+
+- *Type:* string
+
+---
+
+##### `minute`<sup>Required</sup> <a name="minute" id="@quirion/cdk-constructs.ProvisionedConcurrencyConfigurationTime.property.minute"></a>
+
+```typescript
+public readonly minute: string;
+```
+
+- *Type:* string
+
+---
+
 ### SingleTableDatastoreProps <a name="SingleTableDatastoreProps" id="@quirion/cdk-constructs.SingleTableDatastoreProps"></a>
 
 #### Initializer <a name="Initializer" id="@quirion/cdk-constructs.SingleTableDatastoreProps.Initializer"></a>
@@ -417,7 +818,7 @@ const singleTableDatastoreProps: SingleTableDatastoreProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@quirion/cdk-constructs.SingleTableDatastoreProps.property.tableName">tableName</a></code> | <code>string</code> | Mandatory table name. |
-| <code><a href="#@quirion/cdk-constructs.SingleTableDatastoreProps.property.options">options</a></code> | <code>any</code> | Optional extend deployment with more table props. |
+| <code><a href="#@quirion/cdk-constructs.SingleTableDatastoreProps.property.options">options</a></code> | <code>any</code> | TODO figure out how to use TableProps but every attribute is optional. |
 
 ---
 
@@ -441,9 +842,9 @@ public readonly options: any;
 
 - *Type:* any
 
-Optional extend deployment with more table props.
+TODO figure out how to use TableProps but every attribute is optional.
 
-Notice the injected config will override some.
+Optional extend deployment with more table props. Notice the injected config will override some.
 
 > [Configuration](Configuration)
 

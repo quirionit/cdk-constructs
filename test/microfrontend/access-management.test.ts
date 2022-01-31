@@ -1,7 +1,7 @@
 import { App, Stack } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
 import { Bucket } from 'aws-cdk-lib/aws-s3';
-import { AccessManagement } from '../../lib/microfrontend/access-management';
+import { AccessManagement } from '../../src';
 
 describe('AccessManagement', () => {
   test('should deploy access management for a bucket without any deployment config', () => {

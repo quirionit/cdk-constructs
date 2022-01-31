@@ -11,6 +11,10 @@
       "type": "build"
     },
     {
+      "name": "@types/aws-lambda",
+      "type": "build"
+    },
+    {
       "name": "@types/jest",
       "type": "build"
     },
@@ -35,8 +39,17 @@
       "type": "build"
     },
     {
+      "name": "aws-lambda",
+      "type": "build"
+    },
+    {
       "name": "constructs",
       "version": "10.0.5",
+      "type": "build"
+    },
+    {
+      "name": "esbuild",
+      "version": "0",
       "type": "build"
     },
     {

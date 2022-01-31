@@ -1,6 +1,6 @@
 import { App, Stack } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
-import { MicroFrontend } from '../../lib/microfrontend/micro-frontend';
+import { MicroFrontend } from '../../src';
 
 describe('Microfrontend', () => {
   test('should deploy microfrontend without any records', () => {

@@ -274,7 +274,7 @@
           "exec": "npm install"
         },
         {
-          "exec": "npm update @aws-cdk/aws-apigatewayv2-alpha @aws-cdk/aws-lambda-go-alpha @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-cdk-lib constructs eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii jsii-diff jsii-docgen json-schema npm-check-updates standard-version ts-jest typescript @aws-cdk/aws-apigatewayv2-alpha @aws-cdk/aws-lambda-go-alpha aws-cdk-lib constructs @aws-cdk/aws-apigatewayv2-authorizers-alpha @aws-cdk/aws-apigatewayv2-integrations-alpha"
+          "exec": "npm update @aws-cdk/aws-apigatewayv2-alpha @aws-cdk/aws-lambda-go-alpha @types/aws-lambda @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-cdk-lib aws-lambda constructs esbuild eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii jsii-diff jsii-docgen json-schema npm-check-updates standard-version ts-jest typescript @aws-cdk/aws-apigatewayv2-alpha @aws-cdk/aws-lambda-go-alpha aws-cdk-lib constructs @aws-cdk/aws-apigatewayv2-authorizers-alpha @aws-cdk/aws-apigatewayv2-integrations-alpha"
         },
         {
           "exec": "npx projen"
