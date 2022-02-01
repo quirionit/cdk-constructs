@@ -11,6 +11,11 @@ import { CnameRecord, HostedZone } from 'aws-cdk-lib/aws-route53';
 import { Construct } from 'constructs';
 import { AccessManagementConfiguration } from './access-management-configuration';
 
+/**
+ * The construct AccessManagement creates a CloudFront - Distribution pointing to a S3 - Bucket.
+ * If deployment configuration is provided the CloudFront - Distribution will use an actual domain otherwise
+ * a default domain is provided.
+ */
 export class AccessManagement extends Construct {
 
   readonly distribution: Distribution;

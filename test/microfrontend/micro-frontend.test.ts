@@ -1,6 +1,6 @@
 import { App, Stack } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
-import { MicroFrontend } from '../../src';
+import { Microfrontend } from '../../src';
 
 describe('Microfrontend', () => {
   test('should deploy microfrontend without any records', () => {
@@ -12,7 +12,7 @@ describe('Microfrontend', () => {
     testStack.node.setContext('branch', 'master');
 
     // Create the topic the stack we're testing will reference.
-    new MicroFrontend(testStack, 'Microfrontend', {
+    new Microfrontend(testStack, 'Microfrontend', {
       app: 'Test',
       distPath: './test/microfrontend/test-dist',
     });
@@ -67,7 +67,7 @@ describe('Microfrontend', () => {
     testStack.node.setContext('branch', 'master');
 
     // Create the topic the stack we're testing will reference.
-    new MicroFrontend(testStack, 'Microfrontend', {
+    new Microfrontend(testStack, 'Microfrontend', {
       app: 'Test',
       distPath: './test/microfrontend/test-dist',
       branchesWithRecords: ['master'],

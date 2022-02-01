@@ -2,6 +2,7 @@ import { GoFunction, GoFunctionProps } from '@aws-cdk/aws-lambda-go-alpha';
 import { PolicyStatement, PolicyStatementProps } from 'aws-cdk-lib/aws-iam';
 import { ParameterTier, StringParameter } from 'aws-cdk-lib/aws-ssm';
 import { Construct } from 'constructs';
+import { isType } from '../utils';
 import { BaseLambdaConfiguration } from './base-lambda-configuration';
 import { ProvisionedConcurrency } from './provisioned-concurrency';
 import { DefaultConfiguration, ProvisionedConcurrencyConfiguration } from './provisioned-concurrency-configuration';
@@ -17,6 +18,10 @@ export class GoLambda extends GoFunction {
   readonly policies?: Array<PolicyStatementProps>;
 
   constructor(scope: Construct, id: string, props: BaseLambdaConfiguration<GoFunctionProps>) {
+
+    if (!isType<GoFunctionProps>(props.functionProps)) {
+      throw new Error('functionProps must be of type GoFunctionProps');
+    }
 
     const {
       provisionedConcurrency = false,

@@ -4,13 +4,20 @@ import { BucketDeployment, Source } from 'aws-cdk-lib/aws-s3-deployment';
 import { Construct } from 'constructs';
 import { filterSpecialCharacters, fromContext } from '../utils';
 import { AccessManagement } from './access-management';
-import { MicroFrontendConfiguration } from './micro-frontend-configuration';
+import { MicrofrontendConfiguration } from './microfrontend-configuration';
 
 /**
- * MicroFrontendStack deploys static files to a public s3 bucket
+ * Microfrontend deploys a static web app to S3 with a Cloudfront - Distribution.
+ * @context branch - a string describing the current git - branch must be provided to handle feature deployment.
+ *
+ * TODO make to actual microfrontend.
+ *  1. Create map in AWS containing all microfrontends with URL´s
+ *  2. Provide endpoint / api to load said map
+ *  3. Include logic to delete periodically feature deployments
+ *  4. Provide webhook to delete stack on branch deletion
  */
-export class MicroFrontend extends Construct {
-  constructor(scope: Construct, id: string, props: MicroFrontendConfiguration) {
+export class Microfrontend extends Construct {
+  constructor(scope: Construct, id: string, props: MicrofrontendConfiguration) {
     super(scope, filterSpecialCharacters(id));
 
     const {

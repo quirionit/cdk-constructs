@@ -3,6 +3,7 @@ import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { NodejsFunctionProps } from 'aws-cdk-lib/aws-lambda-nodejs/lib/function';
 import { ParameterTier, StringParameter } from 'aws-cdk-lib/aws-ssm';
 import { Construct } from 'constructs';
+import { isType } from '../utils';
 import { BaseLambdaConfiguration } from './base-lambda-configuration';
 import { ProvisionedConcurrency } from './provisioned-concurrency';
 import { DefaultConfiguration, ProvisionedConcurrencyConfiguration } from './provisioned-concurrency-configuration';
@@ -18,6 +19,10 @@ export class NodeJsLambda extends NodejsFunction {
   readonly policies?: Array<PolicyStatementProps>;
 
   constructor(scope: Construct, id: string, props: BaseLambdaConfiguration<NodejsFunctionProps>) {
+
+    if (!isType<NodejsFunctionProps>(props.functionProps)) {
+      throw new Error('functionProps must be of type NodejsFunctionProps');
+    }
 
     const {
       provisionedConcurrency = false,

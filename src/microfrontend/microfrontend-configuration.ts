@@ -3,7 +3,7 @@ import { DeploymentConfiguration } from './deployment-configuration';
 /**
  * Additional props to create a new micro frontend stack
  */
-export interface MicroFrontendConfiguration {
+export interface MicrofrontendConfiguration {
 
   /**
    * Describes the name of the app

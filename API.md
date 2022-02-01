@@ -4,6 +4,10 @@
 
 ### AccessManagement <a name="AccessManagement" id="@quirion/cdk-constructs.AccessManagement"></a>
 
+The construct AccessManagement creates a CloudFront - Distribution pointing to a S3 - Bucket.
+
+If deployment configuration is provided the CloudFront - Distribution will use an actual domain otherwise a default domain is provided.
+
 #### Initializers <a name="Initializers" id="@quirion/cdk-constructs.AccessManagement.Initializer"></a>
 
 ```typescript
@@ -160,41 +164,41 @@ public readonly policies: PolicyStatementProps[];
 ---
 
 
-### MicroFrontend <a name="MicroFrontend" id="@quirion/cdk-constructs.MicroFrontend"></a>
+### Microfrontend <a name="Microfrontend" id="@quirion/cdk-constructs.Microfrontend"></a>
 
-MicroFrontendStack deploys static files to a public s3 bucket.
+Microfrontend deploys a static web app to S3 with a Cloudfront - Distribution.
 
-#### Initializers <a name="Initializers" id="@quirion/cdk-constructs.MicroFrontend.Initializer"></a>
+#### Initializers <a name="Initializers" id="@quirion/cdk-constructs.Microfrontend.Initializer"></a>
 
 ```typescript
-import { MicroFrontend } from '@quirion/cdk-constructs'
+import { Microfrontend } from '@quirion/cdk-constructs'
 
-new MicroFrontend(scope: Construct, id: string, props: MicroFrontendConfiguration)
+new Microfrontend(scope: Construct, id: string, props: MicrofrontendConfiguration)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@quirion/cdk-constructs.MicroFrontend.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#@quirion/cdk-constructs.MicroFrontend.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@quirion/cdk-constructs.MicroFrontend.Initializer.parameter.props">props</a></code> | <code><a href="#@quirion/cdk-constructs.MicroFrontendConfiguration">MicroFrontendConfiguration</a></code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.Microfrontend.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.Microfrontend.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.Microfrontend.Initializer.parameter.props">props</a></code> | <code><a href="#@quirion/cdk-constructs.MicrofrontendConfiguration">MicrofrontendConfiguration</a></code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="@quirion/cdk-constructs.MicroFrontend.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="@quirion/cdk-constructs.Microfrontend.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="@quirion/cdk-constructs.MicroFrontend.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="@quirion/cdk-constructs.Microfrontend.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="@quirion/cdk-constructs.MicroFrontend.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="@quirion/cdk-constructs.Microfrontend.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#@quirion/cdk-constructs.MicroFrontendConfiguration">MicroFrontendConfiguration</a>
+- *Type:* <a href="#@quirion/cdk-constructs.MicrofrontendConfiguration">MicrofrontendConfiguration</a>
 
 ---
 
@@ -617,30 +621,30 @@ Zone name of record.
 
 ---
 
-### MicroFrontendConfiguration <a name="MicroFrontendConfiguration" id="@quirion/cdk-constructs.MicroFrontendConfiguration"></a>
+### MicrofrontendConfiguration <a name="MicrofrontendConfiguration" id="@quirion/cdk-constructs.MicrofrontendConfiguration"></a>
 
 Additional props to create a new micro frontend stack.
 
-#### Initializer <a name="Initializer" id="@quirion/cdk-constructs.MicroFrontendConfiguration.Initializer"></a>
+#### Initializer <a name="Initializer" id="@quirion/cdk-constructs.MicrofrontendConfiguration.Initializer"></a>
 
 ```typescript
-import { MicroFrontendConfiguration } from '@quirion/cdk-constructs'
+import { MicrofrontendConfiguration } from '@quirion/cdk-constructs'
 
-const microFrontendConfiguration: MicroFrontendConfiguration = { ... }
+const microfrontendConfiguration: MicrofrontendConfiguration = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@quirion/cdk-constructs.MicroFrontendConfiguration.property.app">app</a></code> | <code>string</code> | Describes the name of the app. |
-| <code><a href="#@quirion/cdk-constructs.MicroFrontendConfiguration.property.distPath">distPath</a></code> | <code>string</code> | Path to generated / built files. |
-| <code><a href="#@quirion/cdk-constructs.MicroFrontendConfiguration.property.branchesWithRecords">branchesWithRecords</a></code> | <code>string[]</code> | All branches which should be deployed with given deployment configuration. |
-| <code><a href="#@quirion/cdk-constructs.MicroFrontendConfiguration.property.config">config</a></code> | <code><a href="#@quirion/cdk-constructs.DeploymentConfiguration">DeploymentConfiguration</a></code> | Deployment configuration. |
+| <code><a href="#@quirion/cdk-constructs.MicrofrontendConfiguration.property.app">app</a></code> | <code>string</code> | Describes the name of the app. |
+| <code><a href="#@quirion/cdk-constructs.MicrofrontendConfiguration.property.distPath">distPath</a></code> | <code>string</code> | Path to generated / built files. |
+| <code><a href="#@quirion/cdk-constructs.MicrofrontendConfiguration.property.branchesWithRecords">branchesWithRecords</a></code> | <code>string[]</code> | All branches which should be deployed with given deployment configuration. |
+| <code><a href="#@quirion/cdk-constructs.MicrofrontendConfiguration.property.config">config</a></code> | <code><a href="#@quirion/cdk-constructs.DeploymentConfiguration">DeploymentConfiguration</a></code> | Deployment configuration. |
 
 ---
 
-##### `app`<sup>Required</sup> <a name="app" id="@quirion/cdk-constructs.MicroFrontendConfiguration.property.app"></a>
+##### `app`<sup>Required</sup> <a name="app" id="@quirion/cdk-constructs.MicrofrontendConfiguration.property.app"></a>
 
 ```typescript
 public readonly app: string;
@@ -652,7 +656,7 @@ Describes the name of the app.
 
 ---
 
-##### `distPath`<sup>Required</sup> <a name="distPath" id="@quirion/cdk-constructs.MicroFrontendConfiguration.property.distPath"></a>
+##### `distPath`<sup>Required</sup> <a name="distPath" id="@quirion/cdk-constructs.MicrofrontendConfiguration.property.distPath"></a>
 
 ```typescript
 public readonly distPath: string;
@@ -664,7 +668,7 @@ Path to generated / built files.
 
 ---
 
-##### `branchesWithRecords`<sup>Optional</sup> <a name="branchesWithRecords" id="@quirion/cdk-constructs.MicroFrontendConfiguration.property.branchesWithRecords"></a>
+##### `branchesWithRecords`<sup>Optional</sup> <a name="branchesWithRecords" id="@quirion/cdk-constructs.MicrofrontendConfiguration.property.branchesWithRecords"></a>
 
 ```typescript
 public readonly branchesWithRecords: string[];
@@ -676,7 +680,7 @@ All branches which should be deployed with given deployment configuration.
 
 ---
 
-##### `config`<sup>Optional</sup> <a name="config" id="@quirion/cdk-constructs.MicroFrontendConfiguration.property.config"></a>
+##### `config`<sup>Optional</sup> <a name="config" id="@quirion/cdk-constructs.MicrofrontendConfiguration.property.config"></a>
 
 ```typescript
 public readonly config: DeploymentConfiguration;
