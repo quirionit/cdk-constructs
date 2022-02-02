@@ -93,12 +93,6 @@ describe('Lambda', () => {
         FunctionName: {
           Ref: 'GoLambdaDB6DB034',
         },
-        FunctionVersion: {
-          'Fn::GetAtt': [
-            'GoLambdaCurrentVersion291F7E8C9ad98c1dcac2a13c94fbb29d17921e8d',
-            'Version',
-          ],
-        },
         Name: 'pc',
       },
     });
