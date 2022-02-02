@@ -23,6 +23,12 @@ const project = new awscdk.AwsCdkConstructLibrary({
     'constructs',
     'serverless',
     'quirion',
+    'swagger',
+    'gateway',
+    'lambda',
+    'website',
+    'dynamo',
+    'microservice',
   ],
 
   packageManager: NodePackageManager.NPM,

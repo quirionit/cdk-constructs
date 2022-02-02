@@ -77,8 +77,14 @@
   "keywords": [
     "cdk",
     "constructs",
+    "dynamo",
+    "gateway",
+    "lambda",
+    "microservice",
     "quirion",
-    "serverless"
+    "serverless",
+    "swagger",
+    "website"
   ],
   "main": "lib/index.js",
   "license": "Apache-2.0",
