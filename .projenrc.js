@@ -23,6 +23,12 @@ const project = new awscdk.AwsCdkConstructLibrary({
     'constructs',
     'serverless',
     'quirion',
+    'swagger',
+    'gateway',
+    'lambda',
+    'website',
+    'dynamo',
+    'microservice',
   ],
 
   packageManager: NodePackageManager.NPM,
@@ -45,6 +51,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
     `@aws-cdk/aws-apigatewayv2-integrations-alpha@${cdkVersion}-alpha.0`,
   ],
   devDeps: [
+    'aws-lambda',
+    '@types/aws-lambda',
+    'esbuild@0',
     `@aws-cdk/aws-apigatewayv2-alpha@${cdkVersion}-alpha.0`,
     `@aws-cdk/aws-lambda-go-alpha@${cdkVersion}-alpha.0`,
   ],

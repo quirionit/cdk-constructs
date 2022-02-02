@@ -2,28 +2,21 @@ import { RemovalPolicy } from 'aws-cdk-lib';
 import { Bucket, HttpMethods } from 'aws-cdk-lib/aws-s3';
 import { BucketDeployment, Source } from 'aws-cdk-lib/aws-s3-deployment';
 import { Construct } from 'constructs';
+import { getEnvironment } from '../utils';
+import { SwaggerConfiguration } from './swagger-configuration';
 
-export interface SwaggerProps {
-  /**
-   * Name of bucket
-   */
-  readonly bucketName: string;
-
-  /**
-   * Path to asset to upload to s3 (Zipped Swagger documentation)
-   */
-  readonly path: string;
-}
-
+/**
+ * Deploys a swagger json to a S3 - Bucket and exposes it.
+ */
 export class Swagger extends Construct {
   readonly bucket: Bucket;
 
-  constructor(scope: Construct, id: string, props: SwaggerProps) {
+  constructor(scope: Construct, id: string, props: SwaggerConfiguration) {
     super(scope, id);
 
     this.bucket = new Bucket(scope, 'SwaggerBucket', {
       versioned: false,
-      bucketName: props.bucketName,
+      bucketName: `${props.bucketName}-${getEnvironment(scope)}`,
       publicReadAccess: true,
       cors: [
         {

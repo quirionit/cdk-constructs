@@ -17,10 +17,14 @@ export function capitalizeFirstLetter(input: string): string {
  * Load variable from context of an app
  * @param scope {Construct}
  * @param input {string}
- * @return {string | undefined}
+ * @return {string}
  */
-export function fromContext(scope: Construct, input: string): string | undefined {
-  return scope.node.tryGetContext(input);
+export function fromContext(scope: Construct, input: string): string {
+  const variable = scope.node.tryGetContext(input);
+  if (!variable) {
+    throw new Error(`Needed context variable ${input} is missing.`);
+  }
+  return variable;
 }
 
 /**
