@@ -63,6 +63,52 @@ public readonly distribution: Distribution;
 ---
 
 
+### BaseApi <a name="BaseApi" id="@quirion/cdk-constructs.BaseApi"></a>
+
+A small extension to the HttpApi.
+
+Creates per default stage "v1" and configures CORS.
+
+> [BaseApiDefaultConfiguration](BaseApiDefaultConfiguration)
+
+#### Initializers <a name="Initializers" id="@quirion/cdk-constructs.BaseApi.Initializer"></a>
+
+```typescript
+import { BaseApi } from '@quirion/cdk-constructs'
+
+new BaseApi(scope: Construct, id: string, props: HttpApiProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@quirion/cdk-constructs.BaseApi.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.BaseApi.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.BaseApi.Initializer.parameter.props">props</a></code> | <code>@aws-cdk/aws-apigatewayv2-alpha.HttpApiProps</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="@quirion/cdk-constructs.BaseApi.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="@quirion/cdk-constructs.BaseApi.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="@quirion/cdk-constructs.BaseApi.Initializer.parameter.props"></a>
+
+- *Type:* @aws-cdk/aws-apigatewayv2-alpha.HttpApiProps
+
+---
+
+
+
+
+
 ### GoLambda <a name="GoLambda" id="@quirion/cdk-constructs.GoLambda"></a>
 
 #### Initializers <a name="Initializers" id="@quirion/cdk-constructs.GoLambda.Initializer"></a>

@@ -5,7 +5,7 @@ import { Construct } from 'constructs';
 import { isType } from '../utils';
 import { BaseLambdaConfiguration } from './base-lambda-configuration';
 import { ProvisionedConcurrency } from './provisioned-concurrency';
-import { DefaultConfiguration, ProvisionedConcurrencyConfiguration } from './provisioned-concurrency-configuration';
+import { ProvisionedConcurrencyDefaultConfiguration, ProvisionedConcurrencyConfiguration } from './provisioned-concurrency-configuration';
 
 export class GoLambda extends GoFunction {
 
@@ -27,7 +27,7 @@ export class GoLambda extends GoFunction {
       provisionedConcurrency = false,
       policies,
       shouldStoreArn = false,
-      provisionedConcurrencyConfig = DefaultConfiguration,
+      provisionedConcurrencyConfig = ProvisionedConcurrencyDefaultConfiguration,
     } = props;
 
     super(scope, id, props.functionProps);

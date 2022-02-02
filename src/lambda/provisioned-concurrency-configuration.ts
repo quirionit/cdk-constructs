@@ -20,7 +20,7 @@ export interface ProvisionedConcurrencyConfiguration {
 /**
  * Default configuration if provisioned concurrency is activated
  */
-export const DefaultConfiguration = {
+export const ProvisionedConcurrencyDefaultConfiguration = {
   minCapacity: 5,
   maxCapacity: 20,
   from: { hour: '10', minute: '0' },
