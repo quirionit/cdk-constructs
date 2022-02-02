@@ -107,6 +107,23 @@ new BaseApi(scope: Construct, id: string, props: HttpApiProps)
 
 
 
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@quirion/cdk-constructs.BaseApi.property.authorizer">authorizer</a></code> | <code>@aws-cdk/aws-apigatewayv2-alpha.IHttpRouteAuthorizer</code> | *No description.* |
+
+---
+
+##### `authorizer`<sup>Optional</sup> <a name="authorizer" id="@quirion/cdk-constructs.BaseApi.property.authorizer"></a>
+
+```typescript
+public readonly authorizer: IHttpRouteAuthorizer;
+```
+
+- *Type:* @aws-cdk/aws-apigatewayv2-alpha.IHttpRouteAuthorizer
+
+---
 
 
 ### GoLambda <a name="GoLambda" id="@quirion/cdk-constructs.GoLambda"></a>
@@ -250,6 +267,119 @@ new Microfrontend(scope: Construct, id: string, props: MicrofrontendConfiguratio
 
 
 
+
+
+### Microservice <a name="Microservice" id="@quirion/cdk-constructs.Microservice"></a>
+
+Serverless microservice based on lambda - functions.
+
+#### Initializers <a name="Initializers" id="@quirion/cdk-constructs.Microservice.Initializer"></a>
+
+```typescript
+import { Microservice } from '@quirion/cdk-constructs'
+
+new Microservice(scope: Construct, id: string, props: MicroserviceConfiguration)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@quirion/cdk-constructs.Microservice.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.Microservice.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.Microservice.Initializer.parameter.props">props</a></code> | <code><a href="#@quirion/cdk-constructs.MicroserviceConfiguration">MicroserviceConfiguration</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="@quirion/cdk-constructs.Microservice.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="@quirion/cdk-constructs.Microservice.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="@quirion/cdk-constructs.Microservice.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#@quirion/cdk-constructs.MicroserviceConfiguration">MicroserviceConfiguration</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@quirion/cdk-constructs.Microservice.newLambda">newLambda</a></code> | Add new Lambda to microservice. |
+
+---
+
+##### `newLambda` <a name="newLambda" id="@quirion/cdk-constructs.Microservice.newLambda"></a>
+
+```typescript
+public newLambda(props: NewLambdaConfiguration)
+```
+
+###### `props`<sup>Required</sup> <a name="props" id="@quirion/cdk-constructs.Microservice.newLambda.parameter.props"></a>
+
+- *Type:* <a href="#@quirion/cdk-constructs.NewLambdaConfiguration">NewLambdaConfiguration</a>
+
+MicroserviceNewLambdaProps.
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@quirion/cdk-constructs.Microservice.property.lambdas">lambdas</a></code> | <code>{[ key: string ]: aws-cdk-lib.aws_lambda.Function}</code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.Microservice.property.api">api</a></code> | <code><a href="#@quirion/cdk-constructs.BaseApi">BaseApi</a></code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.Microservice.property.dataStore">dataStore</a></code> | <code><a href="#@quirion/cdk-constructs.SingleTableDatastore">SingleTableDatastore</a></code> | *No description.* |
+| <code><a href="#@quirion/cdk-constructs.Microservice.property.eventStore">eventStore</a></code> | <code><a href="#@quirion/cdk-constructs.SingleTableDatastore">SingleTableDatastore</a></code> | *No description.* |
+
+---
+
+##### `lambdas`<sup>Required</sup> <a name="lambdas" id="@quirion/cdk-constructs.Microservice.property.lambdas"></a>
+
+```typescript
+public readonly lambdas: {[ key: string ]: Function};
+```
+
+- *Type:* {[ key: string ]: aws-cdk-lib.aws_lambda.Function}
+
+---
+
+##### `api`<sup>Optional</sup> <a name="api" id="@quirion/cdk-constructs.Microservice.property.api"></a>
+
+```typescript
+public readonly api: BaseApi;
+```
+
+- *Type:* <a href="#@quirion/cdk-constructs.BaseApi">BaseApi</a>
+
+---
+
+##### `dataStore`<sup>Optional</sup> <a name="dataStore" id="@quirion/cdk-constructs.Microservice.property.dataStore"></a>
+
+```typescript
+public readonly dataStore: SingleTableDatastore;
+```
+
+- *Type:* <a href="#@quirion/cdk-constructs.SingleTableDatastore">SingleTableDatastore</a>
+
+---
+
+##### `eventStore`<sup>Optional</sup> <a name="eventStore" id="@quirion/cdk-constructs.Microservice.property.eventStore"></a>
+
+```typescript
+public readonly eventStore: SingleTableDatastore;
+```
+
+- *Type:* <a href="#@quirion/cdk-constructs.SingleTableDatastore">SingleTableDatastore</a>
+
+---
 
 
 ### NodeJsLambda <a name="NodeJsLambda" id="@quirion/cdk-constructs.NodeJsLambda"></a>
@@ -501,6 +631,49 @@ Further deployment properties.
 
 ---
 
+### ApiConfiguration <a name="ApiConfiguration" id="@quirion/cdk-constructs.ApiConfiguration"></a>
+
+#### Initializer <a name="Initializer" id="@quirion/cdk-constructs.ApiConfiguration.Initializer"></a>
+
+```typescript
+import { ApiConfiguration } from '@quirion/cdk-constructs'
+
+const apiConfiguration: ApiConfiguration = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@quirion/cdk-constructs.ApiConfiguration.property.public">public</a></code> | <code>boolean</code> | Should it be public (or internal use only). |
+| <code><a href="#@quirion/cdk-constructs.ApiConfiguration.property.swagger">swagger</a></code> | <code><a href="#@quirion/cdk-constructs.SwaggerConfiguration">SwaggerConfiguration</a></code> | Should create and publish swagger documentation. |
+
+---
+
+##### `public`<sup>Required</sup> <a name="public" id="@quirion/cdk-constructs.ApiConfiguration.property.public"></a>
+
+```typescript
+public readonly public: boolean;
+```
+
+- *Type:* boolean
+
+Should it be public (or internal use only).
+
+---
+
+##### `swagger`<sup>Optional</sup> <a name="swagger" id="@quirion/cdk-constructs.ApiConfiguration.property.swagger"></a>
+
+```typescript
+public readonly swagger: SwaggerConfiguration;
+```
+
+- *Type:* <a href="#@quirion/cdk-constructs.SwaggerConfiguration">SwaggerConfiguration</a>
+
+Should create and publish swagger documentation.
+
+---
+
 ### BaseLambdaConfiguration <a name="BaseLambdaConfiguration" id="@quirion/cdk-constructs.BaseLambdaConfiguration"></a>
 
 #### Initializer <a name="Initializer" id="@quirion/cdk-constructs.BaseLambdaConfiguration.Initializer"></a>
@@ -738,6 +911,170 @@ Deployment configuration.
 
 ---
 
+### MicroserviceConfiguration <a name="MicroserviceConfiguration" id="@quirion/cdk-constructs.MicroserviceConfiguration"></a>
+
+#### Initializer <a name="Initializer" id="@quirion/cdk-constructs.MicroserviceConfiguration.Initializer"></a>
+
+```typescript
+import { MicroserviceConfiguration } from '@quirion/cdk-constructs'
+
+const microserviceConfiguration: MicroserviceConfiguration = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@quirion/cdk-constructs.MicroserviceConfiguration.property.context">context</a></code> | <code>string</code> | Context the ms is implementing. |
+| <code><a href="#@quirion/cdk-constructs.MicroserviceConfiguration.property.dataStore">dataStore</a></code> | <code>boolean</code> | Should create dynamo data store. |
+| <code><a href="#@quirion/cdk-constructs.MicroserviceConfiguration.property.domain">domain</a></code> | <code>string</code> | Domain (according to domain model). |
+| <code><a href="#@quirion/cdk-constructs.MicroserviceConfiguration.property.eventStore">eventStore</a></code> | <code>boolean</code> | Should create event store. |
+| <code><a href="#@quirion/cdk-constructs.MicroserviceConfiguration.property.api">api</a></code> | <code><a href="#@quirion/cdk-constructs.ApiConfiguration">ApiConfiguration</a></code> | Should create an api gateway for the microservice default: undefined. |
+
+---
+
+##### `context`<sup>Required</sup> <a name="context" id="@quirion/cdk-constructs.MicroserviceConfiguration.property.context"></a>
+
+```typescript
+public readonly context: string;
+```
+
+- *Type:* string
+
+Context the ms is implementing.
+
+---
+
+##### `dataStore`<sup>Required</sup> <a name="dataStore" id="@quirion/cdk-constructs.MicroserviceConfiguration.property.dataStore"></a>
+
+```typescript
+public readonly dataStore: boolean;
+```
+
+- *Type:* boolean
+
+Should create dynamo data store.
+
+---
+
+##### `domain`<sup>Required</sup> <a name="domain" id="@quirion/cdk-constructs.MicroserviceConfiguration.property.domain"></a>
+
+```typescript
+public readonly domain: string;
+```
+
+- *Type:* string
+
+Domain (according to domain model).
+
+---
+
+##### `eventStore`<sup>Required</sup> <a name="eventStore" id="@quirion/cdk-constructs.MicroserviceConfiguration.property.eventStore"></a>
+
+```typescript
+public readonly eventStore: boolean;
+```
+
+- *Type:* boolean
+
+Should create event store.
+
+---
+
+##### `api`<sup>Optional</sup> <a name="api" id="@quirion/cdk-constructs.MicroserviceConfiguration.property.api"></a>
+
+```typescript
+public readonly api: ApiConfiguration;
+```
+
+- *Type:* <a href="#@quirion/cdk-constructs.ApiConfiguration">ApiConfiguration</a>
+
+Should create an api gateway for the microservice default: undefined.
+
+---
+
+### NewLambdaConfiguration <a name="NewLambdaConfiguration" id="@quirion/cdk-constructs.NewLambdaConfiguration"></a>
+
+#### Initializer <a name="Initializer" id="@quirion/cdk-constructs.NewLambdaConfiguration.Initializer"></a>
+
+```typescript
+import { NewLambdaConfiguration } from '@quirion/cdk-constructs'
+
+const newLambdaConfiguration: NewLambdaConfiguration = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@quirion/cdk-constructs.NewLambdaConfiguration.property.path">path</a></code> | <code>string</code> | Path to lambda. |
+| <code><a href="#@quirion/cdk-constructs.NewLambdaConfiguration.property.type">type</a></code> | <code>string</code> | Type of lambda. |
+| <code><a href="#@quirion/cdk-constructs.NewLambdaConfiguration.property.lambdaProps">lambdaProps</a></code> | <code><a href="#@quirion/cdk-constructs.BaseLambdaConfiguration">BaseLambdaConfiguration</a></code> | Hand in extra lambda props. |
+| <code><a href="#@quirion/cdk-constructs.NewLambdaConfiguration.property.queue">queue</a></code> | <code><a href="#@quirion/cdk-constructs.QueueConfiguration">QueueConfiguration</a></code> | Should be subscribed to queue. |
+| <code><a href="#@quirion/cdk-constructs.NewLambdaConfiguration.property.route">route</a></code> | <code><a href="#@quirion/cdk-constructs.RouteConfiguration">RouteConfiguration</a></code> | Route configuration for api lambdas. |
+
+---
+
+##### `path`<sup>Required</sup> <a name="path" id="@quirion/cdk-constructs.NewLambdaConfiguration.property.path"></a>
+
+```typescript
+public readonly path: string;
+```
+
+- *Type:* string
+
+Path to lambda.
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="@quirion/cdk-constructs.NewLambdaConfiguration.property.type"></a>
+
+```typescript
+public readonly type: string;
+```
+
+- *Type:* string
+
+Type of lambda.
+
+---
+
+##### `lambdaProps`<sup>Optional</sup> <a name="lambdaProps" id="@quirion/cdk-constructs.NewLambdaConfiguration.property.lambdaProps"></a>
+
+```typescript
+public readonly lambdaProps: BaseLambdaConfiguration;
+```
+
+- *Type:* <a href="#@quirion/cdk-constructs.BaseLambdaConfiguration">BaseLambdaConfiguration</a>
+
+Hand in extra lambda props.
+
+---
+
+##### `queue`<sup>Optional</sup> <a name="queue" id="@quirion/cdk-constructs.NewLambdaConfiguration.property.queue"></a>
+
+```typescript
+public readonly queue: QueueConfiguration;
+```
+
+- *Type:* <a href="#@quirion/cdk-constructs.QueueConfiguration">QueueConfiguration</a>
+
+Should be subscribed to queue.
+
+---
+
+##### `route`<sup>Optional</sup> <a name="route" id="@quirion/cdk-constructs.NewLambdaConfiguration.property.route"></a>
+
+```typescript
+public readonly route: RouteConfiguration;
+```
+
+- *Type:* <a href="#@quirion/cdk-constructs.RouteConfiguration">RouteConfiguration</a>
+
+Route configuration for api lambdas.
+
+---
+
 ### ProvisionedConcurrencyConfiguration <a name="ProvisionedConcurrencyConfiguration" id="@quirion/cdk-constructs.ProvisionedConcurrencyConfiguration"></a>
 
 Configuration for provisioned concurrency.
@@ -850,6 +1187,118 @@ public readonly minute: string;
 ```
 
 - *Type:* string
+
+---
+
+### QueueConfiguration <a name="QueueConfiguration" id="@quirion/cdk-constructs.QueueConfiguration"></a>
+
+#### Initializer <a name="Initializer" id="@quirion/cdk-constructs.QueueConfiguration.Initializer"></a>
+
+```typescript
+import { QueueConfiguration } from '@quirion/cdk-constructs'
+
+const queueConfiguration: QueueConfiguration = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@quirion/cdk-constructs.QueueConfiguration.property.busName">busName</a></code> | <code>string</code> | Name of event bus. |
+| <code><a href="#@quirion/cdk-constructs.QueueConfiguration.property.eventPattern">eventPattern</a></code> | <code>aws-cdk-lib.aws_events.EventPattern</code> | Configure a pattern to filter incoming events Read more here: https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html https://docs.aws.amazon.com/cdk/api/v2//docs/aws-cdk-lib.aws_events.EventPattern.html. |
+| <code><a href="#@quirion/cdk-constructs.QueueConfiguration.property.schedule">schedule</a></code> | <code>aws-cdk-lib.aws_events.Schedule</code> | Configure a schedule to run this lambda. |
+
+---
+
+##### `busName`<sup>Required</sup> <a name="busName" id="@quirion/cdk-constructs.QueueConfiguration.property.busName"></a>
+
+```typescript
+public readonly busName: string;
+```
+
+- *Type:* string
+
+Name of event bus.
+
+---
+
+##### `eventPattern`<sup>Optional</sup> <a name="eventPattern" id="@quirion/cdk-constructs.QueueConfiguration.property.eventPattern"></a>
+
+```typescript
+public readonly eventPattern: EventPattern;
+```
+
+- *Type:* aws-cdk-lib.aws_events.EventPattern
+
+Configure a pattern to filter incoming events Read more here: https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html https://docs.aws.amazon.com/cdk/api/v2//docs/aws-cdk-lib.aws_events.EventPattern.html.
+
+---
+
+##### `schedule`<sup>Optional</sup> <a name="schedule" id="@quirion/cdk-constructs.QueueConfiguration.property.schedule"></a>
+
+```typescript
+public readonly schedule: Schedule;
+```
+
+- *Type:* aws-cdk-lib.aws_events.Schedule
+
+Configure a schedule to run this lambda.
+
+---
+
+### RouteConfiguration <a name="RouteConfiguration" id="@quirion/cdk-constructs.RouteConfiguration"></a>
+
+#### Initializer <a name="Initializer" id="@quirion/cdk-constructs.RouteConfiguration.Initializer"></a>
+
+```typescript
+import { RouteConfiguration } from '@quirion/cdk-constructs'
+
+const routeConfiguration: RouteConfiguration = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@quirion/cdk-constructs.RouteConfiguration.property.method">method</a></code> | <code>@aws-cdk/aws-apigatewayv2-alpha.HttpMethod</code> | Http method for route. |
+| <code><a href="#@quirion/cdk-constructs.RouteConfiguration.property.path">path</a></code> | <code>string</code> | Path to lambda function. |
+| <code><a href="#@quirion/cdk-constructs.RouteConfiguration.property.authorizer">authorizer</a></code> | <code>@aws-cdk/aws-apigatewayv2-alpha.IHttpRouteAuthorizer</code> | Optional authorizer. |
+
+---
+
+##### `method`<sup>Required</sup> <a name="method" id="@quirion/cdk-constructs.RouteConfiguration.property.method"></a>
+
+```typescript
+public readonly method: HttpMethod;
+```
+
+- *Type:* @aws-cdk/aws-apigatewayv2-alpha.HttpMethod
+
+Http method for route.
+
+---
+
+##### `path`<sup>Required</sup> <a name="path" id="@quirion/cdk-constructs.RouteConfiguration.property.path"></a>
+
+```typescript
+public readonly path: string;
+```
+
+- *Type:* string
+
+Path to lambda function.
+
+---
+
+##### `authorizer`<sup>Optional</sup> <a name="authorizer" id="@quirion/cdk-constructs.RouteConfiguration.property.authorizer"></a>
+
+```typescript
+public readonly authorizer: IHttpRouteAuthorizer;
+```
+
+- *Type:* @aws-cdk/aws-apigatewayv2-alpha.IHttpRouteAuthorizer
+
+Optional authorizer.
 
 ---
 
