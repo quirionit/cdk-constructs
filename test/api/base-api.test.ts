@@ -61,7 +61,5 @@ describe('BaseApi', () => {
         AutoDeploy: true,
       },
     });
-
-    console.log(template.toJSON());
   });
 });

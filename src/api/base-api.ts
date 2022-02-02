@@ -1,4 +1,5 @@
 import { HttpApi, HttpApiProps, HttpStage } from '@aws-cdk/aws-apigatewayv2-alpha';
+import { IHttpRouteAuthorizer } from '@aws-cdk/aws-apigatewayv2-alpha/lib/http/authorizer';
 import { Construct } from 'constructs';
 import { BaseApiDefaultConfiguration } from './base-api-configuration';
 
@@ -8,12 +9,15 @@ import { BaseApiDefaultConfiguration } from './base-api-configuration';
  */
 export class BaseApi extends HttpApi {
 
+  readonly authorizer?: IHttpRouteAuthorizer;
+
   constructor(scope: Construct, id: string, props: HttpApiProps) {
     // hand default props to super
     super(scope, id, {
       ...BaseApiDefaultConfiguration,
       ...props,
     });
+    this.authorizer = props.defaultAuthorizer;
     new HttpStage(this, `${id}_Stage`, {
       httpApi: this,
       stageName: 'v1',
