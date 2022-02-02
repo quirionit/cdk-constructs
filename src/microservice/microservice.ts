@@ -52,12 +52,12 @@ export class Microservice extends Construct {
     if (api) {
       if (api.public) {
         this.api = new BaseApi(this, 'BaseApi', {
-          apiName: `${capitalizeFirstLetter(props.domain) + capitalizeFirstLetter(props.context)}HttpGateway`,
+          apiName: `${capitalizeFirstLetter(props.domain) + capitalizeFirstLetter(props.context)}HttpApi`,
           description: `Http - gateway for ${domain}${context} - Microservice.`,
         });
       } else {
         this.api = new BaseApi(this, 'BaseApi', {
-          apiName: `${capitalizeFirstLetter(props.domain) + capitalizeFirstLetter(props.context)}HttpGateway`,
+          apiName: `${capitalizeFirstLetter(props.domain) + capitalizeFirstLetter(props.context)}HttpApi`,
           description: `Http - gateway for ${domain}${context} - Microservice.`,
           defaultAuthorizer: new HttpIamAuthorizer(),
         });
