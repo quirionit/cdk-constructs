@@ -25,7 +25,6 @@ describe('Lambda', () => {
           S3Bucket: {
             'Fn::Sub': 'cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}',
           },
-          S3Key: '823b12584233f95c44caa48e3e01c30f1263e3ca36aa01cda9e7cfafaa7ab3db.zip',
         },
         Role: {
           'Fn::GetAtt': [
@@ -70,7 +69,6 @@ describe('Lambda', () => {
           S3Bucket: {
             'Fn::Sub': 'cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}',
           },
-          S3Key: '823b12584233f95c44caa48e3e01c30f1263e3ca36aa01cda9e7cfafaa7ab3db.zip',
         },
         Role: {
           'Fn::GetAtt': [
@@ -221,7 +219,6 @@ describe('Lambda', () => {
           S3Bucket: {
             'Fn::Sub': 'cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}',
           },
-          S3Key: '3bd8f3ac0fd79ce7d11813ba59a6c52dd95fec4f790a7284b042c1298f540905.zip',
         },
         Role: {
           'Fn::GetAtt': [
@@ -270,7 +267,6 @@ describe('Lambda', () => {
           S3Bucket: {
             'Fn::Sub': 'cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}',
           },
-          S3Key: '3bd8f3ac0fd79ce7d11813ba59a6c52dd95fec4f790a7284b042c1298f540905.zip',
         },
         Role: {
           'Fn::GetAtt': [
