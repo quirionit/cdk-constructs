@@ -66,7 +66,7 @@ export class Microfrontend extends Construct {
         sources: [Source.asset(distPath)],
         destinationBucket: bucket,
         distribution: accessManagement.distribution,
-        distributionPaths: ['/*']
+        distributionPaths: ['/*'],
       });
     } catch (error) {
       if (distPath.includes(app)) {
