@@ -65,6 +65,8 @@ export class Microfrontend extends Construct {
       new BucketDeployment(this, 'BucketDeployment', {
         sources: [Source.asset(distPath)],
         destinationBucket: bucket,
+        distribution: accessManagement.distribution,
+        distributionPaths: ['/*']
       });
     } catch (error) {
       if (distPath.includes(app)) {
