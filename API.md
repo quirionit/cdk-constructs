@@ -696,7 +696,7 @@ const baseLambdaConfiguration: BaseLambdaConfiguration = { ... }
 
 ---
 
-##### `functionProps`<sup>Required</sup> <a name="functionProps" id="@quirionit/cdk-constructs.BaseLambdaConfiguration.property.functionProps"></a>
+##### `functionProps`<sup>Optional</sup> <a name="functionProps" id="@quirionit/cdk-constructs.BaseLambdaConfiguration.property.functionProps"></a>
 
 ```typescript
 public readonly functionProps: FunctionOptions;

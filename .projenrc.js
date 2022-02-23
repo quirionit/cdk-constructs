@@ -3,7 +3,7 @@ const {
   NodePackageManager, NpmAccess,
 } = require('projen/lib/javascript');
 
-const cdkVersion = '2.9.0';
+const cdkVersion = '2.12.0';
 
 const project = new awscdk.AwsCdkConstructLibrary({
   name: '@quirionit/cdk-constructs',

@@ -28,5 +28,5 @@ export interface BaseLambdaConfiguration<FunctionProps extends FunctionOptions> 
   /**
    * Should hand in regular function props
    */
-  readonly functionProps: FunctionProps;
+  readonly functionProps?: FunctionProps;
 }
