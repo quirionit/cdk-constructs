@@ -4,7 +4,7 @@ import { GoFunctionProps } from '@aws-cdk/aws-lambda-go-alpha';
 import { EventBus, Rule } from 'aws-cdk-lib/aws-events';
 import { SqsQueue } from 'aws-cdk-lib/aws-events-targets';
 import { AnyPrincipal } from 'aws-cdk-lib/aws-iam';
-import { Function, FunctionOptions } from 'aws-cdk-lib/aws-lambda';
+import { Function, FunctionOptions, Tracing } from 'aws-cdk-lib/aws-lambda';
 import { SqsEventSource } from 'aws-cdk-lib/aws-lambda-event-sources';
 import { NodejsFunctionProps } from 'aws-cdk-lib/aws-lambda-nodejs/lib/function';
 import { Queue } from 'aws-cdk-lib/aws-sqs';
@@ -16,6 +16,7 @@ import { Swagger } from '../swagger';
 import { capitalizeFirstLetter, filterSpecialCharacters, isType } from '../utils';
 import { MicroserviceConfiguration } from './microservice-configuration';
 import { NewLambdaConfiguration } from './new-lambda-configuration';
+import { Duration } from 'aws-cdk-lib';
 
 /**
  * Serverless microservice based on lambda - functions.
@@ -122,6 +123,8 @@ export class Microservice extends Construct {
             functionName: name,
             entry: path,
             memorySize: 1024,
+            timeout: Duration.seconds(30),
+            tracing: Tracing.ACTIVE,
             ...lambdaProps?.functionProps,
             environment: { ...this.lambdaEnvironment, ...functionProps?.environment },
           },
@@ -141,6 +144,8 @@ export class Microservice extends Construct {
             functionName: name,
             entry: path,
             memorySize: 1024,
+            timeout: Duration.seconds(30),
+            tracing: Tracing.ACTIVE,
             ...lambdaProps,
             environment: { ...this.lambdaEnvironment, ...functionProps?.environment },
           },
