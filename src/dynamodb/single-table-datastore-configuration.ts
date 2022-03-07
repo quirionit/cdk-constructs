@@ -22,7 +22,7 @@ export const Configuration: SingleTableDatastoreConfiguration = {
     },
     billingMode: BillingMode.PAY_PER_REQUEST,
     timeToLiveAttribute: 'TimeToLive',
-    removalPolicy: RemovalPolicy.DESTROY,
+    removalPolicy: RemovalPolicy.RETAIN,
   },
   prod: {
     partitionKey: {
@@ -36,5 +36,6 @@ export const Configuration: SingleTableDatastoreConfiguration = {
     pointInTimeRecovery: true,
     billingMode: BillingMode.PAY_PER_REQUEST,
     timeToLiveAttribute: 'TimeToLive',
+    removalPolicy: RemovalPolicy.RETAIN,
   },
 };

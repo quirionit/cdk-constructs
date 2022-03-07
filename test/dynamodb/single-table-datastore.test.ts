@@ -70,8 +70,8 @@ describe('SingleTableDatastore', () => {
     template.hasResource('AWS::DynamoDB::Table', {
       Type: 'AWS::DynamoDB::Table',
       Properties: properties,
-      UpdateReplacePolicy: 'Delete',
-      DeletionPolicy: 'Delete',
+      UpdateReplacePolicy: 'Retain',
+      DeletionPolicy: 'Retain',
     });
   });
   test('should create table for prod', () => {
@@ -153,8 +153,8 @@ describe('SingleTableDatastore', () => {
     template.hasResource('AWS::DynamoDB::Table', {
       Type: 'AWS::DynamoDB::Table',
       Properties: props,
-      UpdateReplacePolicy: 'Delete',
-      DeletionPolicy: 'Delete',
+      UpdateReplacePolicy: 'Retain',
+      DeletionPolicy: 'Retain',
     });
   });
 });

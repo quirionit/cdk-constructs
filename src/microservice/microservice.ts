@@ -1,6 +1,7 @@
 import { HttpIamAuthorizer } from '@aws-cdk/aws-apigatewayv2-authorizers-alpha';
 import { HttpLambdaIntegration } from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
 import { GoFunctionProps } from '@aws-cdk/aws-lambda-go-alpha';
+import { Duration } from 'aws-cdk-lib';
 import { EventBus, Rule } from 'aws-cdk-lib/aws-events';
 import { SqsQueue } from 'aws-cdk-lib/aws-events-targets';
 import { AnyPrincipal } from 'aws-cdk-lib/aws-iam';
@@ -16,7 +17,6 @@ import { Swagger } from '../swagger';
 import { capitalizeFirstLetter, filterSpecialCharacters, isType } from '../utils';
 import { MicroserviceConfiguration } from './microservice-configuration';
 import { NewLambdaConfiguration } from './new-lambda-configuration';
-import { Duration } from 'aws-cdk-lib';
 
 /**
  * Serverless microservice based on lambda - functions.
@@ -146,7 +146,7 @@ export class Microservice extends Construct {
             memorySize: 1024,
             timeout: Duration.seconds(30),
             tracing: Tracing.ACTIVE,
-            ...lambdaProps,
+            ...lambdaProps?.functionProps,
             environment: { ...this.lambdaEnvironment, ...functionProps?.environment },
           },
         });
