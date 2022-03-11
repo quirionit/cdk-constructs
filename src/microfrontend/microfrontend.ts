@@ -67,6 +67,7 @@ export class Microfrontend extends Construct {
         destinationBucket: bucket,
         distribution: accessManagement.distribution,
         distributionPaths: ['/*'],
+        memoryLimit: 10240,
       });
     } catch (error) {
       if (distPath.includes(app)) {
