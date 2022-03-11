@@ -43,13 +43,6 @@ export class Microfrontend extends Construct {
         publicReadAccess: true,
         removalPolicy: RemovalPolicy.DESTROY,
         autoDeleteObjects: true,
-        websiteIndexDocument: 'index.html',
-        websiteErrorDocument: 'error.html',
-        cors: [{
-          allowedHeaders: [],
-          allowedMethods: [HttpMethods.GET],
-          allowedOrigins: ['*'],
-        }],
       });
     } else {
       bucket = new Bucket(this, `S3Bucket_${app}`, {
