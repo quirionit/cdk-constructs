@@ -24,14 +24,16 @@ describe('Microfrontend', () => {
       Type: 'AWS::S3::Bucket',
       Properties: {
         AccessControl: 'Private',
-        Tags: [{
-          Key: 'aws-cdk:auto-delete-objects',
-          Value: 'true',
-        },
-        {
-          Key: 'aws-cdk:cr-owned:bca0f134',
-          Value: 'true',
-        }],
+        Tags: [
+          {
+            Key: 'aws-cdk:auto-delete-objects',
+            Value: 'true',
+          },
+          {
+            Key: 'aws-cdk:cr-owned:04cd7714',
+            Value: 'true',
+          },
+        ],
       },
       UpdateReplacePolicy: 'Delete',
       DeletionPolicy: 'Delete',
@@ -89,7 +91,7 @@ describe('Microfrontend', () => {
         AccessControl: 'Private',
         Tags: [
           {
-            Key: 'aws-cdk:cr-owned:bca0f134',
+            Key: 'aws-cdk:cr-owned:04cd7714',
             Value: 'true',
           },
         ],
