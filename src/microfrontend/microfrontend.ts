@@ -1,5 +1,5 @@
 import { CfnOutput, RemovalPolicy } from 'aws-cdk-lib';
-import { Bucket, BucketAccessControl } from 'aws-cdk-lib/aws-s3';
+import { Bucket, BucketAccessControl, HttpMethods } from 'aws-cdk-lib/aws-s3';
 import { BucketDeployment, Source } from 'aws-cdk-lib/aws-s3-deployment';
 import { Construct } from 'constructs';
 import { filterSpecialCharacters, fromContext } from '../utils';
@@ -38,10 +38,20 @@ export class Microfrontend extends Construct {
     if (branchesWithRecords?.includes(branch)) {
       bucket = new Bucket(this, `S3Bucket_${app}`, {
         accessControl: BucketAccessControl.PRIVATE,
+        cors: [{
+          allowedHeaders: [],
+          allowedMethods: [HttpMethods.GET],
+          allowedOrigins: ['*'],
+        }],
       });
     } else {
       bucket = new Bucket(this, `S3Bucket_${app}`, {
         accessControl: BucketAccessControl.PRIVATE,
+        cors: [{
+          allowedHeaders: [],
+          allowedMethods: [HttpMethods.GET],
+          allowedOrigins: ['*'],
+        }],
         removalPolicy: RemovalPolicy.DESTROY,
         autoDeleteObjects: true,
       });
