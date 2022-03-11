@@ -23,7 +23,20 @@ describe('Microfrontend', () => {
     template.hasResource('AWS::S3::Bucket', {
       Type: 'AWS::S3::Bucket',
       Properties: {
-        AccessControl: 'PublicRead',
+        AccessControl: 'Private',
+        CorsConfiguration: {
+          CorsRules: [
+            {
+              AllowedHeaders: [],
+              AllowedMethods: [
+                'GET',
+              ],
+              AllowedOrigins: [
+                '*',
+              ],
+            },
+          ],
+        },
         Tags: [
           {
             Key: 'aws-cdk:auto-delete-objects',
@@ -49,15 +62,9 @@ describe('Microfrontend', () => {
     });
 
     template.hasOutput(
-      'MicrofrontendDistributionURL523B8685',
+      'MicrofrontendURL45C65A91',
       {
-        Description: 'Domain of distribution.',
-        Value: {
-          'Fn::GetAtt': [
-            'MicrofrontendAccessManagementCloudFrontDistributionD6BF3E53',
-            'DomainName',
-          ],
-        },
+        Description: 'URL.',
       });
   });
   test('should deploy microfrontend with records', () => {
@@ -88,16 +95,33 @@ describe('Microfrontend', () => {
     template.hasResource('AWS::S3::Bucket', {
       Type: 'AWS::S3::Bucket',
       Properties: {
-        AccessControl: 'PublicRead',
+        AccessControl: 'Private',
+        CorsConfiguration: {
+          CorsRules: [
+            {
+              AllowedHeaders: [],
+              AllowedMethods: [
+                'GET',
+              ],
+              AllowedOrigins: [
+                '*',
+              ],
+            },
+          ],
+        },
         Tags: [
+          {
+            Key: 'aws-cdk:auto-delete-objects',
+            Value: 'true',
+          },
           {
             Key: 'aws-cdk:cr-owned:04cd7714',
             Value: 'true',
           },
         ],
       },
-      UpdateReplacePolicy: 'Retain',
-      DeletionPolicy: 'Retain',
+      UpdateReplacePolicy: 'Delete',
+      DeletionPolicy: 'Delete',
     });
 
     template.hasResource('AWS::CloudFront::CloudFrontOriginAccessIdentity', {
@@ -110,15 +134,9 @@ describe('Microfrontend', () => {
     });
 
     template.hasOutput(
-      'MicrofrontendDistributionURL523B8685',
+      'MicrofrontendURL45C65A91',
       {
-        Description: 'Domain of distribution.',
-        Value: {
-          'Fn::GetAtt': [
-            'MicrofrontendAccessManagementCloudFrontDistributionD6BF3E53',
-            'DomainName',
-          ],
-        },
+        Description: 'URL.',
       });
   });
 });

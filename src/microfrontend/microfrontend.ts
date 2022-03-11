@@ -25,6 +25,7 @@ export class Microfrontend extends Construct {
       distPath,
       config,
       branchesWithRecords,
+      distribution = true,
     } = props;
 
     // filter out special characters
@@ -35,9 +36,15 @@ export class Microfrontend extends Construct {
 
     // create generic s3 bucket with private access control
     let bucket;
-    if (branchesWithRecords?.includes(branch)) {
+
+    if (!distribution) {
       bucket = new Bucket(this, `S3Bucket_${app}`, {
         accessControl: BucketAccessControl.PUBLIC_READ,
+        publicReadAccess: true,
+        removalPolicy: RemovalPolicy.DESTROY,
+        autoDeleteObjects: true,
+        websiteIndexDocument: 'index.html',
+        websiteErrorDocument: 'error.html',
         cors: [{
           allowedHeaders: [],
           allowedMethods: [HttpMethods.GET],
@@ -46,7 +53,7 @@ export class Microfrontend extends Construct {
       });
     } else {
       bucket = new Bucket(this, `S3Bucket_${app}`, {
-        accessControl: BucketAccessControl.PUBLIC_READ,
+        accessControl: BucketAccessControl.PRIVATE,
         cors: [{
           allowedHeaders: [],
           allowedMethods: [HttpMethods.GET],
@@ -59,35 +66,47 @@ export class Microfrontend extends Construct {
 
     let accessManagement;
 
-    if (branchesWithRecords?.includes(branch)) {
-      accessManagement = new AccessManagement(this, 'AccessManagement', {
-        bucket,
-        deploymentConfiguration: config,
-      });
-    } else {
-      accessManagement = new AccessManagement(this, 'AccessManagement', {
-        bucket,
-      });
+    if (distribution) {
+      if (branchesWithRecords?.includes(branch)) {
+        accessManagement = new AccessManagement(this, 'AccessManagement', {
+          bucket,
+          deploymentConfiguration: config,
+        });
+      } else {
+        accessManagement = new AccessManagement(this, 'AccessManagement', {
+          bucket,
+        });
+      }
     }
 
     try {
       // Deploy site contents to S3 bucket
-      new BucketDeployment(this, 'BucketDeployment', {
-        sources: [Source.asset(distPath)],
-        destinationBucket: bucket,
-        distribution: accessManagement.distribution,
-        distributionPaths: ['/*'],
-        memoryLimit: 10240,
-      });
+      if (accessManagement) {
+        new BucketDeployment(this, 'BucketDeployment', {
+          sources: [Source.asset(distPath)],
+          destinationBucket: bucket,
+          distribution: accessManagement.distribution,
+          distributionPaths: ['/*'],
+          memoryLimit: 10240,
+          retainOnDelete: false,
+        });
+      } else {
+        new BucketDeployment(this, 'BucketDeployment', {
+          sources: [Source.asset(distPath)],
+          destinationBucket: bucket,
+          memoryLimit: 10240,
+          retainOnDelete: false,
+        });
+      }
     } catch (error) {
       if (distPath.includes(app)) {
         console.error(error);
       }
     }
 
-    new CfnOutput(this, 'DistributionURL', {
-      value: accessManagement.distribution.distributionDomainName,
-      description: 'Domain of distribution.',
+    new CfnOutput(this, 'URL', {
+      value: accessManagement?.distribution.distributionDomainName ?? bucket.bucketWebsiteDomainName,
+      description: 'URL.',
     });
   }
 }

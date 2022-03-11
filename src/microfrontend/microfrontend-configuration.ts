@@ -24,4 +24,9 @@ export interface MicrofrontendConfiguration {
    * All branches which should be deployed with given deployment configuration
    */
   readonly branchesWithRecords?: string[];
+
+  /**
+   * Whether the bucket should be deployed with a cloudfront - distribution
+   */
+  readonly distribution?: boolean;
 }

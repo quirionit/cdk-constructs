@@ -860,6 +860,7 @@ const microfrontendConfiguration: MicrofrontendConfiguration = { ... }
 | <code><a href="#@quirionit/cdk-constructs.MicrofrontendConfiguration.property.distPath">distPath</a></code> | <code>string</code> | Path to generated / built files. |
 | <code><a href="#@quirionit/cdk-constructs.MicrofrontendConfiguration.property.branchesWithRecords">branchesWithRecords</a></code> | <code>string[]</code> | All branches which should be deployed with given deployment configuration. |
 | <code><a href="#@quirionit/cdk-constructs.MicrofrontendConfiguration.property.config">config</a></code> | <code><a href="#@quirionit/cdk-constructs.DeploymentConfiguration">DeploymentConfiguration</a></code> | Deployment configuration. |
+| <code><a href="#@quirionit/cdk-constructs.MicrofrontendConfiguration.property.distribution">distribution</a></code> | <code>boolean</code> | Whether the bucket should be deployed with a cloudfront - distribution. |
 
 ---
 
@@ -908,6 +909,18 @@ public readonly config: DeploymentConfiguration;
 - *Type:* <a href="#@quirionit/cdk-constructs.DeploymentConfiguration">DeploymentConfiguration</a>
 
 Deployment configuration.
+
+---
+
+##### `distribution`<sup>Optional</sup> <a name="distribution" id="@quirionit/cdk-constructs.MicrofrontendConfiguration.property.distribution"></a>
+
+```typescript
+public readonly distribution: boolean;
+```
+
+- *Type:* boolean
+
+Whether the bucket should be deployed with a cloudfront - distribution.
 
 ---
 
