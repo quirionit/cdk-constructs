@@ -23,7 +23,7 @@ describe('Microfrontend', () => {
     template.hasResource('AWS::S3::Bucket', {
       Type: 'AWS::S3::Bucket',
       Properties: {
-        AccessControl: 'Private',
+        AccessControl: 'PublicRead',
         Tags: [
           {
             Key: 'aws-cdk:auto-delete-objects',
@@ -88,7 +88,7 @@ describe('Microfrontend', () => {
     template.hasResource('AWS::S3::Bucket', {
       Type: 'AWS::S3::Bucket',
       Properties: {
-        AccessControl: 'Private',
+        AccessControl: 'PublicRead',
         Tags: [
           {
             Key: 'aws-cdk:cr-owned:04cd7714',

@@ -37,7 +37,7 @@ export class Microfrontend extends Construct {
     let bucket;
     if (branchesWithRecords?.includes(branch)) {
       bucket = new Bucket(this, `S3Bucket_${app}`, {
-        accessControl: BucketAccessControl.PRIVATE,
+        accessControl: BucketAccessControl.PUBLIC_READ,
         cors: [{
           allowedHeaders: [],
           allowedMethods: [HttpMethods.GET],
@@ -46,7 +46,7 @@ export class Microfrontend extends Construct {
       });
     } else {
       bucket = new Bucket(this, `S3Bucket_${app}`, {
-        accessControl: BucketAccessControl.PRIVATE,
+        accessControl: BucketAccessControl.PUBLIC_READ,
         cors: [{
           allowedHeaders: [],
           allowedMethods: [HttpMethods.GET],
