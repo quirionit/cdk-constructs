@@ -92,6 +92,7 @@ export class Microfrontend extends Construct {
         new BucketDeployment(this, 'BucketDeployment', {
           sources: [Source.asset(distPath)],
           destinationBucket: bucket,
+          distributionPaths: ['/*'],
           memoryLimit: 10240,
           retainOnDelete: false,
         });
