@@ -63,6 +63,8 @@ export class AccessManagement extends Construct {
           allowedMethods: AllowedMethods.ALLOW_ALL,
           viewerProtocolPolicy: ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
         },
+        errorResponses: [{ httpStatus: 404, responseHttpStatus: 200, responsePagePath: '/index.html' }],
+        minimumProtocolVersion: SecurityPolicyProtocol.TLS_V1_2_2021,
       });
     }
   }
