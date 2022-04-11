@@ -1415,6 +1415,10 @@ Path to asset to upload to s3 (Zipped Swagger documentation).
 | --- | --- |
 | <code><a href="#@quirionit/cdk-constructs.Stage.DEVELOPMENT">DEVELOPMENT</a></code> | *No description.* |
 | <code><a href="#@quirionit/cdk-constructs.Stage.PRODUCTION">PRODUCTION</a></code> | *No description.* |
+| <code><a href="#@quirionit/cdk-constructs.Stage.PREVIEW">PREVIEW</a></code> | *No description.* |
+| <code><a href="#@quirionit/cdk-constructs.Stage.PREPRODUCTION">PREPRODUCTION</a></code> | *No description.* |
+| <code><a href="#@quirionit/cdk-constructs.Stage.TEST">TEST</a></code> | *No description.* |
+| <code><a href="#@quirionit/cdk-constructs.Stage.FEATURE">FEATURE</a></code> | *No description.* |
 
 ---
 
@@ -1426,6 +1430,26 @@ Aws stages names.
 
 
 #### `PRODUCTION` <a name="PRODUCTION" id="@quirionit/cdk-constructs.Stage.PRODUCTION"></a>
+
+---
+
+
+#### `PREVIEW` <a name="PREVIEW" id="@quirionit/cdk-constructs.Stage.PREVIEW"></a>
+
+---
+
+
+#### `PREPRODUCTION` <a name="PREPRODUCTION" id="@quirionit/cdk-constructs.Stage.PREPRODUCTION"></a>
+
+---
+
+
+#### `TEST` <a name="TEST" id="@quirionit/cdk-constructs.Stage.TEST"></a>
+
+---
+
+
+#### `FEATURE` <a name="FEATURE" id="@quirionit/cdk-constructs.Stage.FEATURE"></a>
 
 ---
 

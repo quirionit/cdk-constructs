@@ -1,9 +1,8 @@
 import { RemovalPolicy } from 'aws-cdk-lib';
 import { AttributeType, BillingMode, TableProps } from 'aws-cdk-lib/aws-dynamodb';
-import { Stage } from '../types';
 
 export type SingleTableDatastoreConfiguration = {
-  [key in Stage]: TableProps;
+  [key: string]: TableProps;
 };
 
 /**
