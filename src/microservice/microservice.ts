@@ -141,7 +141,7 @@ export class Microservice extends Construct {
         this.lambdas[name] = new GoLambda(this, name, {
           ...lambdaProps,
           functionProps: {
-            functionName: name,
+            functionName: lambdaProps?.functionProps?.functionName ?? name,
             entry: path,
             memorySize: 1024,
             timeout: Duration.seconds(30),
