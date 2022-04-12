@@ -46,6 +46,10 @@ describe('Microservice', () => {
         },
       },
     });
+    ms.newLambda({
+      type: 'Nodejs',
+      path: './test/lambda/test-lambdas/nodejs/index.ts',
+    });
 
     // Prepare the stack for assertions.
     const template = Template.fromStack(testStack);
