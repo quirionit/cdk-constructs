@@ -3,9 +3,12 @@ import { PolicyStatement, PolicyStatementProps } from 'aws-cdk-lib/aws-iam';
 import { ParameterTier, StringParameter } from 'aws-cdk-lib/aws-ssm';
 import { Construct } from 'constructs';
 import { isType } from '../utils';
-import { BaseLambdaConfiguration } from './base-lambda-configuration';
+import { GoLambdaConfiguration } from './base-lambda-configuration';
 import { ProvisionedConcurrency } from './provisioned-concurrency';
-import { ProvisionedConcurrencyDefaultConfiguration, ProvisionedConcurrencyConfiguration } from './provisioned-concurrency-configuration';
+import {
+  ProvisionedConcurrencyConfiguration,
+  ProvisionedConcurrencyDefaultConfiguration,
+} from './provisioned-concurrency-configuration';
 
 export class GoLambda extends GoFunction {
 
@@ -17,7 +20,7 @@ export class GoLambda extends GoFunction {
 
   readonly policies?: Array<PolicyStatementProps>;
 
-  constructor(scope: Construct, id: string, props: BaseLambdaConfiguration<GoFunctionProps>) {
+  constructor(scope: Construct, id: string, props: GoLambdaConfiguration) {
 
     if (!isType<GoFunctionProps>(props.functionProps)) {
       throw new Error('functionProps must be of type GoFunctionProps');

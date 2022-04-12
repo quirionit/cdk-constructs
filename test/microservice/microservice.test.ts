@@ -40,6 +40,11 @@ describe('Microservice', () => {
         path: '/test/path/node',
         method: HttpMethod.GET,
       },
+      lambdaProps: {
+        functionProps: {
+          functionName: 'AwesomeLambda',
+        },
+      },
     });
 
     // Prepare the stack for assertions.

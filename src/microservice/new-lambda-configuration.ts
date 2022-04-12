@@ -1,9 +1,8 @@
-import { FunctionOptions } from 'aws-cdk-lib/aws-lambda';
-import { BaseLambdaConfiguration } from '../lambda';
+import { GoLambdaConfiguration, NodejsLambdaConfiguration } from '../lambda';
 import { QueueConfiguration } from './queue-configuration';
 import { RouteConfiguration } from './route-configuration';
 
-export interface NewLambdaConfiguration<FunctionProps extends FunctionOptions> {
+export interface NewLambdaConfiguration {
   /**
    * Path to lambda
    */
@@ -14,10 +13,6 @@ export interface NewLambdaConfiguration<FunctionProps extends FunctionOptions> {
    */
   readonly type: 'Go' | 'Nodejs';
 
-  /**
-   * Name of lambda
-   */
-  readonly name?: string;
 
   /**
    * Should be subscribed to queue
@@ -27,7 +22,7 @@ export interface NewLambdaConfiguration<FunctionProps extends FunctionOptions> {
   /**
    * Hand in extra lambda props
    */
-  readonly lambdaProps?: BaseLambdaConfiguration<FunctionProps>;
+  readonly lambdaProps?: GoLambdaConfiguration | NodejsLambdaConfiguration;
 
   /**
    * Route configuration for api lambdas

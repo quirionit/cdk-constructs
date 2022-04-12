@@ -133,14 +133,14 @@ public readonly authorizer: IHttpRouteAuthorizer;
 ```typescript
 import { GoLambda } from '@quirionit/cdk-constructs'
 
-new GoLambda(scope: Construct, id: string, props: BaseLambdaConfiguration)
+new GoLambda(scope: Construct, id: string, props: GoLambdaConfiguration)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@quirionit/cdk-constructs.GoLambda.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
 | <code><a href="#@quirionit/cdk-constructs.GoLambda.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@quirionit/cdk-constructs.GoLambda.Initializer.parameter.props">props</a></code> | <code><a href="#@quirionit/cdk-constructs.BaseLambdaConfiguration">BaseLambdaConfiguration</a></code> | *No description.* |
+| <code><a href="#@quirionit/cdk-constructs.GoLambda.Initializer.parameter.props">props</a></code> | <code><a href="#@quirionit/cdk-constructs.GoLambdaConfiguration">GoLambdaConfiguration</a></code> | *No description.* |
 
 ---
 
@@ -158,7 +158,7 @@ new GoLambda(scope: Construct, id: string, props: BaseLambdaConfiguration)
 
 ##### `props`<sup>Required</sup> <a name="props" id="@quirionit/cdk-constructs.GoLambda.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#@quirionit/cdk-constructs.BaseLambdaConfiguration">BaseLambdaConfiguration</a>
+- *Type:* <a href="#@quirionit/cdk-constructs.GoLambdaConfiguration">GoLambdaConfiguration</a>
 
 ---
 
@@ -389,14 +389,14 @@ public readonly eventStore: SingleTableDatastore;
 ```typescript
 import { NodeJsLambda } from '@quirionit/cdk-constructs'
 
-new NodeJsLambda(scope: Construct, id: string, props: BaseLambdaConfiguration)
+new NodeJsLambda(scope: Construct, id: string, props: NodejsLambdaConfiguration)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@quirionit/cdk-constructs.NodeJsLambda.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
 | <code><a href="#@quirionit/cdk-constructs.NodeJsLambda.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@quirionit/cdk-constructs.NodeJsLambda.Initializer.parameter.props">props</a></code> | <code><a href="#@quirionit/cdk-constructs.BaseLambdaConfiguration">BaseLambdaConfiguration</a></code> | *No description.* |
+| <code><a href="#@quirionit/cdk-constructs.NodeJsLambda.Initializer.parameter.props">props</a></code> | <code><a href="#@quirionit/cdk-constructs.NodejsLambdaConfiguration">NodejsLambdaConfiguration</a></code> | *No description.* |
 
 ---
 
@@ -414,7 +414,7 @@ new NodeJsLambda(scope: Construct, id: string, props: BaseLambdaConfiguration)
 
 ##### `props`<sup>Required</sup> <a name="props" id="@quirionit/cdk-constructs.NodeJsLambda.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#@quirionit/cdk-constructs.BaseLambdaConfiguration">BaseLambdaConfiguration</a>
+- *Type:* <a href="#@quirionit/cdk-constructs.NodejsLambdaConfiguration">NodejsLambdaConfiguration</a>
 
 ---
 
@@ -688,23 +688,10 @@ const baseLambdaConfiguration: BaseLambdaConfiguration = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@quirionit/cdk-constructs.BaseLambdaConfiguration.property.functionProps">functionProps</a></code> | <code>aws-cdk-lib.aws_lambda.FunctionOptions</code> | Should hand in regular function props. |
 | <code><a href="#@quirionit/cdk-constructs.BaseLambdaConfiguration.property.policies">policies</a></code> | <code>aws-cdk-lib.aws_iam.PolicyStatementProps[]</code> | List of policy - statements which will be attached to lambda. |
 | <code><a href="#@quirionit/cdk-constructs.BaseLambdaConfiguration.property.provisionedConcurrency">provisionedConcurrency</a></code> | <code>boolean</code> | Activate concurrent provisioning (default: false). |
 | <code><a href="#@quirionit/cdk-constructs.BaseLambdaConfiguration.property.provisionedConcurrencyConfig">provisionedConcurrencyConfig</a></code> | <code><a href="#@quirionit/cdk-constructs.ProvisionedConcurrencyConfiguration">ProvisionedConcurrencyConfiguration</a></code> | Override default configuration for provisioned concurrency default:. |
 | <code><a href="#@quirionit/cdk-constructs.BaseLambdaConfiguration.property.shouldStoreArn">shouldStoreArn</a></code> | <code>boolean</code> | Should save lambda arn as ssm - parameter (default: false). |
-
----
-
-##### `functionProps`<sup>Optional</sup> <a name="functionProps" id="@quirionit/cdk-constructs.BaseLambdaConfiguration.property.functionProps"></a>
-
-```typescript
-public readonly functionProps: FunctionOptions;
-```
-
-- *Type:* aws-cdk-lib.aws_lambda.FunctionOptions
-
-Should hand in regular function props.
 
 ---
 
@@ -837,6 +824,90 @@ public readonly zoneName: string;
 - *Type:* string
 
 Zone name of record.
+
+---
+
+### GoLambdaConfiguration <a name="GoLambdaConfiguration" id="@quirionit/cdk-constructs.GoLambdaConfiguration"></a>
+
+#### Initializer <a name="Initializer" id="@quirionit/cdk-constructs.GoLambdaConfiguration.Initializer"></a>
+
+```typescript
+import { GoLambdaConfiguration } from '@quirionit/cdk-constructs'
+
+const goLambdaConfiguration: GoLambdaConfiguration = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@quirionit/cdk-constructs.GoLambdaConfiguration.property.policies">policies</a></code> | <code>aws-cdk-lib.aws_iam.PolicyStatementProps[]</code> | List of policy - statements which will be attached to lambda. |
+| <code><a href="#@quirionit/cdk-constructs.GoLambdaConfiguration.property.provisionedConcurrency">provisionedConcurrency</a></code> | <code>boolean</code> | Activate concurrent provisioning (default: false). |
+| <code><a href="#@quirionit/cdk-constructs.GoLambdaConfiguration.property.provisionedConcurrencyConfig">provisionedConcurrencyConfig</a></code> | <code><a href="#@quirionit/cdk-constructs.ProvisionedConcurrencyConfiguration">ProvisionedConcurrencyConfiguration</a></code> | Override default configuration for provisioned concurrency default:. |
+| <code><a href="#@quirionit/cdk-constructs.GoLambdaConfiguration.property.shouldStoreArn">shouldStoreArn</a></code> | <code>boolean</code> | Should save lambda arn as ssm - parameter (default: false). |
+| <code><a href="#@quirionit/cdk-constructs.GoLambdaConfiguration.property.functionProps">functionProps</a></code> | <code>@aws-cdk/aws-lambda-go-alpha.GoFunctionProps</code> | Should hand in regular function props. |
+
+---
+
+##### `policies`<sup>Optional</sup> <a name="policies" id="@quirionit/cdk-constructs.GoLambdaConfiguration.property.policies"></a>
+
+```typescript
+public readonly policies: PolicyStatementProps[];
+```
+
+- *Type:* aws-cdk-lib.aws_iam.PolicyStatementProps[]
+
+List of policy - statements which will be attached to lambda.
+
+---
+
+##### `provisionedConcurrency`<sup>Optional</sup> <a name="provisionedConcurrency" id="@quirionit/cdk-constructs.GoLambdaConfiguration.property.provisionedConcurrency"></a>
+
+```typescript
+public readonly provisionedConcurrency: boolean;
+```
+
+- *Type:* boolean
+
+Activate concurrent provisioning (default: false).
+
+---
+
+##### `provisionedConcurrencyConfig`<sup>Optional</sup> <a name="provisionedConcurrencyConfig" id="@quirionit/cdk-constructs.GoLambdaConfiguration.property.provisionedConcurrencyConfig"></a>
+
+```typescript
+public readonly provisionedConcurrencyConfig: ProvisionedConcurrencyConfiguration;
+```
+
+- *Type:* <a href="#@quirionit/cdk-constructs.ProvisionedConcurrencyConfiguration">ProvisionedConcurrencyConfiguration</a>
+
+Override default configuration for provisioned concurrency default:.
+
+> [DefaultConfiguration](DefaultConfiguration)
+
+---
+
+##### `shouldStoreArn`<sup>Optional</sup> <a name="shouldStoreArn" id="@quirionit/cdk-constructs.GoLambdaConfiguration.property.shouldStoreArn"></a>
+
+```typescript
+public readonly shouldStoreArn: boolean;
+```
+
+- *Type:* boolean
+
+Should save lambda arn as ssm - parameter (default: false).
+
+---
+
+##### `functionProps`<sup>Optional</sup> <a name="functionProps" id="@quirionit/cdk-constructs.GoLambdaConfiguration.property.functionProps"></a>
+
+```typescript
+public readonly functionProps: GoFunctionProps;
+```
+
+- *Type:* @aws-cdk/aws-lambda-go-alpha.GoFunctionProps
+
+Should hand in regular function props.
 
 ---
 
@@ -1022,8 +1093,7 @@ const newLambdaConfiguration: NewLambdaConfiguration = { ... }
 | --- | --- | --- |
 | <code><a href="#@quirionit/cdk-constructs.NewLambdaConfiguration.property.path">path</a></code> | <code>string</code> | Path to lambda. |
 | <code><a href="#@quirionit/cdk-constructs.NewLambdaConfiguration.property.type">type</a></code> | <code>string</code> | Type of lambda. |
-| <code><a href="#@quirionit/cdk-constructs.NewLambdaConfiguration.property.lambdaProps">lambdaProps</a></code> | <code><a href="#@quirionit/cdk-constructs.BaseLambdaConfiguration">BaseLambdaConfiguration</a></code> | Hand in extra lambda props. |
-| <code><a href="#@quirionit/cdk-constructs.NewLambdaConfiguration.property.name">name</a></code> | <code>string</code> | Name of lambda. |
+| <code><a href="#@quirionit/cdk-constructs.NewLambdaConfiguration.property.lambdaProps">lambdaProps</a></code> | <code><a href="#@quirionit/cdk-constructs.GoLambdaConfiguration">GoLambdaConfiguration</a> \| <a href="#@quirionit/cdk-constructs.NodejsLambdaConfiguration">NodejsLambdaConfiguration</a></code> | Hand in extra lambda props. |
 | <code><a href="#@quirionit/cdk-constructs.NewLambdaConfiguration.property.queue">queue</a></code> | <code><a href="#@quirionit/cdk-constructs.QueueConfiguration">QueueConfiguration</a></code> | Should be subscribed to queue. |
 | <code><a href="#@quirionit/cdk-constructs.NewLambdaConfiguration.property.route">route</a></code> | <code><a href="#@quirionit/cdk-constructs.RouteConfiguration">RouteConfiguration</a></code> | Route configuration for api lambdas. |
 
@@ -1056,24 +1126,12 @@ Type of lambda.
 ##### `lambdaProps`<sup>Optional</sup> <a name="lambdaProps" id="@quirionit/cdk-constructs.NewLambdaConfiguration.property.lambdaProps"></a>
 
 ```typescript
-public readonly lambdaProps: BaseLambdaConfiguration;
+public readonly lambdaProps: GoLambdaConfiguration | NodejsLambdaConfiguration;
 ```
 
-- *Type:* <a href="#@quirionit/cdk-constructs.BaseLambdaConfiguration">BaseLambdaConfiguration</a>
+- *Type:* <a href="#@quirionit/cdk-constructs.GoLambdaConfiguration">GoLambdaConfiguration</a> | <a href="#@quirionit/cdk-constructs.NodejsLambdaConfiguration">NodejsLambdaConfiguration</a>
 
 Hand in extra lambda props.
-
----
-
-##### `name`<sup>Optional</sup> <a name="name" id="@quirionit/cdk-constructs.NewLambdaConfiguration.property.name"></a>
-
-```typescript
-public readonly name: string;
-```
-
-- *Type:* string
-
-Name of lambda.
 
 ---
 
@@ -1098,6 +1156,90 @@ public readonly route: RouteConfiguration;
 - *Type:* <a href="#@quirionit/cdk-constructs.RouteConfiguration">RouteConfiguration</a>
 
 Route configuration for api lambdas.
+
+---
+
+### NodejsLambdaConfiguration <a name="NodejsLambdaConfiguration" id="@quirionit/cdk-constructs.NodejsLambdaConfiguration"></a>
+
+#### Initializer <a name="Initializer" id="@quirionit/cdk-constructs.NodejsLambdaConfiguration.Initializer"></a>
+
+```typescript
+import { NodejsLambdaConfiguration } from '@quirionit/cdk-constructs'
+
+const nodejsLambdaConfiguration: NodejsLambdaConfiguration = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@quirionit/cdk-constructs.NodejsLambdaConfiguration.property.policies">policies</a></code> | <code>aws-cdk-lib.aws_iam.PolicyStatementProps[]</code> | List of policy - statements which will be attached to lambda. |
+| <code><a href="#@quirionit/cdk-constructs.NodejsLambdaConfiguration.property.provisionedConcurrency">provisionedConcurrency</a></code> | <code>boolean</code> | Activate concurrent provisioning (default: false). |
+| <code><a href="#@quirionit/cdk-constructs.NodejsLambdaConfiguration.property.provisionedConcurrencyConfig">provisionedConcurrencyConfig</a></code> | <code><a href="#@quirionit/cdk-constructs.ProvisionedConcurrencyConfiguration">ProvisionedConcurrencyConfiguration</a></code> | Override default configuration for provisioned concurrency default:. |
+| <code><a href="#@quirionit/cdk-constructs.NodejsLambdaConfiguration.property.shouldStoreArn">shouldStoreArn</a></code> | <code>boolean</code> | Should save lambda arn as ssm - parameter (default: false). |
+| <code><a href="#@quirionit/cdk-constructs.NodejsLambdaConfiguration.property.functionProps">functionProps</a></code> | <code>aws-cdk-lib.aws_lambda_nodejs.NodejsFunctionProps</code> | Should hand in regular function props. |
+
+---
+
+##### `policies`<sup>Optional</sup> <a name="policies" id="@quirionit/cdk-constructs.NodejsLambdaConfiguration.property.policies"></a>
+
+```typescript
+public readonly policies: PolicyStatementProps[];
+```
+
+- *Type:* aws-cdk-lib.aws_iam.PolicyStatementProps[]
+
+List of policy - statements which will be attached to lambda.
+
+---
+
+##### `provisionedConcurrency`<sup>Optional</sup> <a name="provisionedConcurrency" id="@quirionit/cdk-constructs.NodejsLambdaConfiguration.property.provisionedConcurrency"></a>
+
+```typescript
+public readonly provisionedConcurrency: boolean;
+```
+
+- *Type:* boolean
+
+Activate concurrent provisioning (default: false).
+
+---
+
+##### `provisionedConcurrencyConfig`<sup>Optional</sup> <a name="provisionedConcurrencyConfig" id="@quirionit/cdk-constructs.NodejsLambdaConfiguration.property.provisionedConcurrencyConfig"></a>
+
+```typescript
+public readonly provisionedConcurrencyConfig: ProvisionedConcurrencyConfiguration;
+```
+
+- *Type:* <a href="#@quirionit/cdk-constructs.ProvisionedConcurrencyConfiguration">ProvisionedConcurrencyConfiguration</a>
+
+Override default configuration for provisioned concurrency default:.
+
+> [DefaultConfiguration](DefaultConfiguration)
+
+---
+
+##### `shouldStoreArn`<sup>Optional</sup> <a name="shouldStoreArn" id="@quirionit/cdk-constructs.NodejsLambdaConfiguration.property.shouldStoreArn"></a>
+
+```typescript
+public readonly shouldStoreArn: boolean;
+```
+
+- *Type:* boolean
+
+Should save lambda arn as ssm - parameter (default: false).
+
+---
+
+##### `functionProps`<sup>Optional</sup> <a name="functionProps" id="@quirionit/cdk-constructs.NodejsLambdaConfiguration.property.functionProps"></a>
+
+```typescript
+public readonly functionProps: NodejsFunctionProps;
+```
+
+- *Type:* aws-cdk-lib.aws_lambda_nodejs.NodejsFunctionProps
+
+Should hand in regular function props.
 
 ---
 

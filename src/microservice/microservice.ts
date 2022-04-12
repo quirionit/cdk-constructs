@@ -5,7 +5,7 @@ import { Duration } from 'aws-cdk-lib';
 import { EventBus, Rule } from 'aws-cdk-lib/aws-events';
 import { SqsQueue } from 'aws-cdk-lib/aws-events-targets';
 import { AnyPrincipal } from 'aws-cdk-lib/aws-iam';
-import { Function, FunctionOptions, Tracing } from 'aws-cdk-lib/aws-lambda';
+import { Function, Tracing } from 'aws-cdk-lib/aws-lambda';
 import { SqsEventSource } from 'aws-cdk-lib/aws-lambda-event-sources';
 import { NodejsFunctionProps } from 'aws-cdk-lib/aws-lambda-nodejs/lib/function';
 import { Queue } from 'aws-cdk-lib/aws-sqs';
@@ -90,13 +90,13 @@ export class Microservice extends Construct {
    * Add new Lambda to microservice
    * @param props MicroserviceNewLambdaProps
    */
-  newLambda(props: NewLambdaConfiguration<FunctionOptions>): Function {
+  newLambda(props: NewLambdaConfiguration): Function {
+    console.log(props);
     const {
       type,
       route,
       path,
       queue,
-      name,
       lambdaProps,
     } = props;
 
@@ -121,7 +121,7 @@ export class Microservice extends Construct {
         this.lambdas[generatedName] = new NodeJsLambda(this, generatedName, {
           ...lambdaProps,
           functionProps: {
-            functionName: name ?? generatedName,
+            functionName: generatedName,
             entry: path,
             memorySize: 1024,
             timeout: Duration.seconds(30),
@@ -142,7 +142,7 @@ export class Microservice extends Construct {
         this.lambdas[generatedName] = new GoLambda(this, generatedName, {
           ...lambdaProps,
           functionProps: {
-            functionName: name ?? generatedName,
+            functionName: generatedName,
             entry: path,
             memorySize: 1024,
             timeout: Duration.seconds(30),
