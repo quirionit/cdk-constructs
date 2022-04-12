@@ -96,6 +96,7 @@ export class Microservice extends Construct {
       route,
       path,
       queue,
+      name,
       lambdaProps,
     } = props;
 
@@ -103,7 +104,7 @@ export class Microservice extends Construct {
       throw new Error('Can´t be source for route and queue concurrently');
     }
 
-    const name = `${this.node.id}_${path
+    const generatedName = `${this.node.id}_${path
       .replace('apps', '')
       .split(/[^a-zA-Z0-9]/g)
       .map((part) => capitalizeFirstLetter(part))
@@ -117,10 +118,10 @@ export class Microservice extends Construct {
           }
         }
         const functionProps = lambdaProps?.functionProps as Partial<NodejsFunctionProps>;
-        this.lambdas[name] = new NodeJsLambda(this, name, {
+        this.lambdas[generatedName] = new NodeJsLambda(this, generatedName, {
           ...lambdaProps,
           functionProps: {
-            functionName: name,
+            functionName: name ?? generatedName,
             entry: path,
             memorySize: 1024,
             timeout: Duration.seconds(30),
@@ -138,10 +139,10 @@ export class Microservice extends Construct {
           }
         }
         const functionProps = lambdaProps?.functionProps as Partial<GoFunctionProps>;
-        this.lambdas[name] = new GoLambda(this, name, {
+        this.lambdas[generatedName] = new GoLambda(this, generatedName, {
           ...lambdaProps,
           functionProps: {
-            functionName: name,
+            functionName: name ?? generatedName,
             entry: path,
             memorySize: 1024,
             timeout: Duration.seconds(30),
@@ -158,25 +159,25 @@ export class Microservice extends Construct {
     }
 
     if (queue?.busName) {
-      const eventBus = EventBus.fromEventBusName(this, `${name}_EventBus`, queue.busName);
-      const rule = new Rule(this, `${name}_EventBusSubscriptionRule`, {
+      const eventBus = EventBus.fromEventBusName(this, `${generatedName}_EventBus`, queue.busName);
+      const rule = new Rule(this, `${generatedName}_EventBusSubscriptionRule`, {
         description: `Subscription to event bus for ${this.node.id}`,
-        ruleName: `${name}_Rule`,
+        ruleName: `${generatedName}_Rule`,
         eventPattern: props.queue?.eventPattern,
         schedule: props.queue?.schedule,
         eventBus: eventBus,
       });
-      const dlq = new Queue(this, `${name}_QueueDlq`, {
-        queueName: `${name}QueueDlq`,
+      const dlq = new Queue(this, `${generatedName}_QueueDlq`, {
+        queueName: `${generatedName}QueueDlq`,
       });
-      const queueSubscription = new Queue(this, `${name}_Queue`, {
-        queueName: `${name}Queue`,
+      const queueSubscription = new Queue(this, `${generatedName}_Queue`, {
+        queueName: `${generatedName}Queue`,
         deadLetterQueue: {
           queue: dlq,
           maxReceiveCount: 1,
         },
       });
-      this.lambdas[name].addEventSource(new SqsEventSource(queueSubscription));
+      this.lambdas[generatedName].addEventSource(new SqsEventSource(queueSubscription));
       rule.addTarget(new SqsQueue(queueSubscription));
     }
 
@@ -186,7 +187,7 @@ export class Microservice extends Construct {
         methods: [route.method],
         integration: new HttpLambdaIntegration(
           `LambdaIntegration${filterSpecialCharacters(route.path)}`,
-          this.lambdas[name],
+          this.lambdas[generatedName],
         ),
         authorizer: route.authorizer,
       });
@@ -195,6 +196,6 @@ export class Microservice extends Construct {
       }
     }
 
-    return this.lambdas[name];
+    return this.lambdas[generatedName];
   }
 }

@@ -15,6 +15,11 @@ export interface NewLambdaConfiguration<FunctionProps extends FunctionOptions> {
   readonly type: 'Go' | 'Nodejs';
 
   /**
+   * Name of lambda
+   */
+  readonly name?: string;
+
+  /**
    * Should be subscribed to queue
    */
   readonly queue?: QueueConfiguration;

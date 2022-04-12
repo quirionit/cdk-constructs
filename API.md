@@ -1023,6 +1023,7 @@ const newLambdaConfiguration: NewLambdaConfiguration = { ... }
 | <code><a href="#@quirionit/cdk-constructs.NewLambdaConfiguration.property.path">path</a></code> | <code>string</code> | Path to lambda. |
 | <code><a href="#@quirionit/cdk-constructs.NewLambdaConfiguration.property.type">type</a></code> | <code>string</code> | Type of lambda. |
 | <code><a href="#@quirionit/cdk-constructs.NewLambdaConfiguration.property.lambdaProps">lambdaProps</a></code> | <code><a href="#@quirionit/cdk-constructs.BaseLambdaConfiguration">BaseLambdaConfiguration</a></code> | Hand in extra lambda props. |
+| <code><a href="#@quirionit/cdk-constructs.NewLambdaConfiguration.property.name">name</a></code> | <code>string</code> | Name of lambda. |
 | <code><a href="#@quirionit/cdk-constructs.NewLambdaConfiguration.property.queue">queue</a></code> | <code><a href="#@quirionit/cdk-constructs.QueueConfiguration">QueueConfiguration</a></code> | Should be subscribed to queue. |
 | <code><a href="#@quirionit/cdk-constructs.NewLambdaConfiguration.property.route">route</a></code> | <code><a href="#@quirionit/cdk-constructs.RouteConfiguration">RouteConfiguration</a></code> | Route configuration for api lambdas. |
 
@@ -1061,6 +1062,18 @@ public readonly lambdaProps: BaseLambdaConfiguration;
 - *Type:* <a href="#@quirionit/cdk-constructs.BaseLambdaConfiguration">BaseLambdaConfiguration</a>
 
 Hand in extra lambda props.
+
+---
+
+##### `name`<sup>Optional</sup> <a name="name" id="@quirionit/cdk-constructs.NewLambdaConfiguration.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+Name of lambda.
 
 ---
 
