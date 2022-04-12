@@ -116,7 +116,7 @@ export class Microservice extends Construct {
             throw new Error(`Not supported lambda type but was ${typeof props.lambdaProps}`);
           }
         }
-        const functionProps = lambdaProps?.functionProps as NodejsFunctionProps;
+        const functionProps = lambdaProps?.functionProps as Partial<NodejsFunctionProps>;
         this.lambdas[name] = new NodeJsLambda(this, name, {
           ...lambdaProps,
           functionProps: {
@@ -125,7 +125,7 @@ export class Microservice extends Construct {
             memorySize: 1024,
             timeout: Duration.seconds(30),
             tracing: Tracing.ACTIVE,
-            ...lambdaProps?.functionProps,
+            ...functionProps,
             environment: { ...this.lambdaEnvironment, ...functionProps?.environment },
           },
         });
@@ -137,16 +137,16 @@ export class Microservice extends Construct {
             throw new Error(`Not supported lambda type but was ${typeof props.lambdaProps}`);
           }
         }
-        const functionProps = lambdaProps?.functionProps as unknown as GoFunctionProps;
+        const functionProps = lambdaProps?.functionProps as Partial<GoFunctionProps>;
         this.lambdas[name] = new GoLambda(this, name, {
           ...lambdaProps,
           functionProps: {
-            functionName: lambdaProps?.functionProps?.functionName ?? name,
+            functionName: name,
             entry: path,
             memorySize: 1024,
             timeout: Duration.seconds(30),
             tracing: Tracing.ACTIVE,
-            ...lambdaProps?.functionProps,
+            ...functionProps,
             environment: { ...this.lambdaEnvironment, ...functionProps?.environment },
           },
         });
