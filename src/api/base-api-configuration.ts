@@ -9,7 +9,7 @@ export const BaseApiDefaultConfiguration = {
       CorsHttpMethod.HEAD,
       CorsHttpMethod.OPTIONS,
       CorsHttpMethod.POST,
-      CorsHttpMethod.DELETE
+      CorsHttpMethod.DELETE,
     ],
     allowOrigins: ['*'],
     maxAge: Duration.days(10),

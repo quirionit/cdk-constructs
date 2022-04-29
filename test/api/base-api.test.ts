@@ -31,7 +31,7 @@ describe('BaseApi', () => {
             'HEAD',
             'OPTIONS',
             'POST',
-            'DELETE'
+            'DELETE',
           ],
           AllowOrigins: [
             '*',
